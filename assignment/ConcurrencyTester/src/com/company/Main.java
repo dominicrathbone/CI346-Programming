@@ -1,7 +1,5 @@
 package com.company;
 
-import java.util.ArrayList;
-
 public class Main {
 
     public static void main(String[] args) {
@@ -23,7 +21,8 @@ public class Main {
         long implicitTotalTimeRun = implicitEndTime - implicitStartTime;
 
         long explicitStartTime = System.nanoTime();
-        explicitConcurrencyRunner.run();
+        Thread thread = new Thread(explicitConcurrencyRunner);
+        thread.start();
         long explicitEndTime = System.nanoTime();
 
         long explicitTotalTimeRun = explicitEndTime - explicitStartTime;
