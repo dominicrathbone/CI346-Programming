@@ -1,33 +1,42 @@
 package com.company;
 
+import java.util.List;
+
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
+        List<Student> students = StudentGenerator.generateStudents();
 
-        NonConcurrentRunner nonConcurrentRunner = new NonConcurrentRunner();
-        ImplicitConcurrencyRunner implicitConcurrencyRunner = new ImplicitConcurrencyRunner();
-        ExplicitConcurrencyRunner explicitConcurrencyRunner = new ExplicitConcurrencyRunner();
+        NonConcurrentRunner nonConcurrentRunner = new NonConcurrentRunner(students);
+        SerialStreamRunner serialStreamRunner = new SerialStreamRunner(students);
+        ParallelStreamRunner parallelStreamRunner = new ParallelStreamRunner(students);
+        MultithreadedRunner multithreadedRunner = new MultithreadedRunner(students);
 
         long nonConcurrentStartTime = System.nanoTime();
         nonConcurrentRunner.run();
         long nonConcurrentEndTime = System.nanoTime();
 
-        long implicitStartTime = System.nanoTime();
-        implicitConcurrencyRunner.run();
-        long implicitEndTime = System.nanoTime();
+        long serialStreamStartTime = System.nanoTime();
+        serialStreamRunner.run();
+        long serialStreamEndTime = System.nanoTime();
 
-        long explicitStartTime = System.nanoTime();
-        Thread thread = new Thread(explicitConcurrencyRunner);
-        thread.start();
-        long explicitEndTime = System.nanoTime();
+        long parallelStreamStartTime = System.nanoTime();
+        parallelStreamRunner.run();
+        long parallelStreamEndTime = System.nanoTime();
 
-        long nonConcurrentTotalTimeRun = nonConcurrentEndTime - nonConcurrentStartTime;
-        long implicitTotalTimeRun = implicitEndTime - implicitStartTime;
-        long explicitTotalTimeRun = explicitEndTime - explicitStartTime;
+        long multiThreadedStartTime = System.nanoTime();
+        multithreadedRunner.run();
+        long multiThreadedEndTime = System.nanoTime();
 
-        System.out.println("non concurrent run took " + nonConcurrentTotalTimeRun + " seconds");
-        System.out.println("implicit concurrent run took " + implicitTotalTimeRun + " seconds");
-        System.out.println("explicit concurrent run took "  + explicitTotalTimeRun + " seconds" );
+        long nonConcurrentTotalTime = nonConcurrentEndTime - nonConcurrentStartTime;
+        long serialStreamTotalTime = serialStreamEndTime - serialStreamStartTime;
+        long parallelStreamTotalTime = parallelStreamEndTime - parallelStreamStartTime;
+        long multiThreadedTotalTime = multiThreadedEndTime - multiThreadedStartTime;
+
+        System.out.println("non concurrent took " + nonConcurrentTotalTime + " seconds");
+        System.out.println("serial stream took " + serialStreamTotalTime + " seconds");
+        System.out.println("parallel stream took "  + parallelStreamTotalTime + " seconds");
+        System.out.println("Multithreaded took "  + multiThreadedTotalTime + " seconds");
     }
 }

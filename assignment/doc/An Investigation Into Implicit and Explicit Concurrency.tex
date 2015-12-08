@@ -134,10 +134,67 @@ listOfStrings
 When dealing with concurrent programming, there are a number of issues to take into consideration.
 
 \subsubsection{Thread interference}
-One of these is thread interference when a resource is changed by one thread whilst another thread is working on it. An example of this is:
-\subsubsection{Memory Consistency Errors}
-\subsubsection{Thread Contention}
-Due to the fact that resources are shared and code being executed simultaenously may try to access these resources simultaenously. Resource starvation is one of these issues where a thread is “starved” of a resource, constantly waiting for it to become available. A common example of this happening is when two threads become deadlocked waiting on each other to complete an action.
+This is when a resource's value become non-deterministic due to multiple threads performing operations on it at the same time. An example of this is:
+
+\begin{enumerate}
+	\item Counter is initialized at a value of 5.
+	\item Thread A increments Counter.
+	\item Counter is at 6.
+	\item Thread B decrement Counter.
+	\item Counter is at 5.
+	\item Thread A reads Counter expecting it to be 6.
+	\item Thread B reads Counter expecting it to be 4.	
+\end{enumerate}
+
+Java multithreading solves this issue with Synchronization. This is where multiple threads working on an individual resource are organized so that only one of them has access to it at a given point in time. This is handled by "monitors", each java object has a "monitor" associated with it that can be locked or unlocked. When a thread wants to access this object, it does so by locking it with this monitor, stopping any other threads from accessing it. 
+To implement this, synchronized methods and synchronized blocks are used. The former is used to apply synchronization to the whole scope of a method whereas the latter only applies the synchronization to the block of code within it.
+
+\begin{figure}
+\caption{Synchronized Method}
+\begin{lstlisting}[language=Java,frame=single]
+public class SynchronizedStudent {
+
+	private String name = "Dom";
+
+	public synchronized void setName(String name) {
+		this.name = name;
+	}
+	
+	public synchronized String getName() {
+		return name;
+	}
+}
+\end{lstlisting}
+\end{figure}
+
+\begin{figure}
+\caption{Synchronized Block}
+\begin{lstlisting}[language=Java,frame=single]
+public class SynchronizedStudent {
+
+	private String name = "Dom";
+	
+	public void setName(String name) {
+		synchronized(this) {
+			this.name = name;
+		}
+	}
+	
+	public String getName() {
+		synchronized(this) {
+			return this.name;
+		}
+	}
+}
+\end{lstlisting}
+\end{figure}
+ 
+With parallel streaming in Java, the library controls and optimises how the stream is broken down into substreams and processed, meaning thread interference does not occur unless an operation is applied to the source collection as the pipe line is being applied to the stream, in which case a ConcurrentModificationException is thrown.
+
+\subsubsection{Thread Contention} 
+Due to the fact that resources are shared and code being executed simultaenously may try to access these resources simultaenously. Resource starvation is one of these issues where a thread is “starved” of a resource, constantly waiting for it to become available. A common example of this happening is deadlock, where two threads are waiting on each other to complete an action.
+
+In Java, this is caused by Synchronization.
 \subsubsection{Implicit Concurrency solving these}
 \subsubsection{Explicit Concurrency solving these}
 
