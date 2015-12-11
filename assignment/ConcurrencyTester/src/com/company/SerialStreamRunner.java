@@ -20,6 +20,5 @@ public class SerialStreamRunner {
                 .filter(s -> s.getAge() > 24)
                 .filter(s -> s.getCourse() == Course.COMPUTER_SCIENCE)
                 .collect(Collectors.toList());
-        System.out.println("serial = " + students.size());
     }
 }

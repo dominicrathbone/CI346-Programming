@@ -23,7 +23,6 @@ public class NonConcurrentRunner {
                 it.remove();
             }
         }
-        System.out.println("non = " + students.size());
     }
 
 }

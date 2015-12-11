@@ -10,12 +10,12 @@ import java.util.UUID;
  */
 public class StudentGenerator {
 
-    public static List<Student> generateStudents() {
+    public static List<Student> generateStudents(int size) {
         List<Student> students = new ArrayList<>();
         Random rng = new Random();
         Course[] courses = Course.values();
 
-        for(int i = 0; i < 100; i++) {
+        for(int i = 0; i < size; i++) {
             UUID id = UUID.randomUUID();
             String name = "testStudent" + i;
             int age = rng.nextInt((60-18)+1) + 18;

@@ -21,6 +21,5 @@ public class ParallelStreamRunner {
                 .filter(s -> s.getAge() > 24)
                 .filter(s -> s.getCourse() == Course.COMPUTER_SCIENCE)
                 .collect(Collectors.toList());
-        System.out.println("parallel = " + students.size());
     }
 }

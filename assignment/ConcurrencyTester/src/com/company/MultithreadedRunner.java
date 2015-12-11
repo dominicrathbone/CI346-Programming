@@ -21,6 +21,5 @@ public class MultithreadedRunner {
         threadB.start();
         threadA.join();
         threadB.join();
-        System.out.println("multi = " + students.size());
     }
 }
