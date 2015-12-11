@@ -1,24 +1,24 @@
 package com.company;
 
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException, IOException {
-        List<Student> students;
 
-        Long[][] results = new Long[4][4];
-        students = StudentGenerator.generateStudents(100);
-        results[0] = runTests(students);
-        students = StudentGenerator.generateStudents(1000);
-        results[1] = runTests(students);
-        students = StudentGenerator.generateStudents(10000);
-        results[2] = runTests(students);
-        students = StudentGenerator.generateStudents(100000);
-        results[3] = runTests(students);
-
-        generateCSV(results);
+        for(int i = 0; i < 10; i++ ) {
+            List<Student> students;
+            Long[][] results = new Long[4][4];
+            students = StudentGenerator.generateStudents(100);
+            results[0] = runTests(students);
+            students = StudentGenerator.generateStudents(1000);
+            results[1] = runTests(students);
+            students = StudentGenerator.generateStudents(10000);
+            results[2] = runTests(students);
+            students = StudentGenerator.generateStudents(100000);
+            results[3] = runTests(students);
+            writeToCSV(results);
+        }
     }
 
     public static Long[] runTests(List<Student> students) throws InterruptedException {
@@ -51,11 +51,14 @@ public class Main {
         return new Long[] {nonConcurrentTotalTime, serialStreamTotalTime, parallelStreamTotalTime, multiThreadedTotalTime};
     }
 
-    public static void generateCSV(Long[][] data) throws IOException {
-        FileWriter writer = new FileWriter("results.csv");
-
-        writer.append("Number of Students,Non Concurrent, Serial Stream, Parallel Stream, Multithreaded");
-        writer.append("\n");
+    public static void writeToCSV(Long[][] data) throws IOException {
+        BufferedWriter writer = new BufferedWriter(new FileWriter("results.csv", true));
+        BufferedReader reader = new BufferedReader(new FileReader("results.csv"));
+        String header = "Number of Students,Non Concurrent, Serial Stream, Parallel Stream, Multithreaded";
+        if(reader.readLine() == null) {
+            writer.append(header);
+            writer.append("\n");
+        }
         for(int j = 0; j < 4; j++) {
             if(j == 0) {
                 writer.append("100");
