@@ -53,7 +53,7 @@ public class Main {
 
     public static void generateCSV(Long[][] data) throws IOException {
         FileWriter writer = new FileWriter("results.csv");
-        
+
         writer.append("Number of Students,Non Concurrent, Serial Stream, Parallel Stream, Multithreaded");
         writer.append("\n");
         for(int j = 0; j < 4; j++) {
