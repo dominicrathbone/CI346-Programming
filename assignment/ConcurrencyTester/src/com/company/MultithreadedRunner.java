@@ -1,25 +1,33 @@
 package com.company;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 /**
  * Created by drathbone on 22/11/15.
  */
 public class MultithreadedRunner {
 
-    List<Student> students;
+    List<Integer> randomNumbers;
+    int number;
 
-    public MultithreadedRunner(List<Student> students) {
-        this.students = new ArrayList<>(students);
+    public MultithreadedRunner(List<Integer> randomNumbers, int number) {
+        this.randomNumbers = randomNumbers;
+        this.number = number;
     }
 
     public void run() throws InterruptedException {
-        Thread threadA = new Thread(new ThreadA(students));
-        Thread threadB = new Thread(new ThreadB(students));
-        threadA.start();
-        threadB.start();
-        threadA.join();
-        threadB.join();
+        ExecutorService executor = Executors.newFixedThreadPool(10);
+        executor.execute(new ThreadA(randomNumbers, number));
+        executor.execute(new ThreadB(randomNumbers, number));
+        executor.execute(new ThreadC(randomNumbers, number));
+        executor.execute(new ThreadD(randomNumbers, number));
+        executor.shutdown();
+        while(!executor.isTerminated()) {
+        }
+        for(Integer i: randomNumbers) {
+            System.out.println(i + "meets all conditions");
+        }
     }
 }

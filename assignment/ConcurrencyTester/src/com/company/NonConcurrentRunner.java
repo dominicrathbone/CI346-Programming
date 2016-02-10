@@ -1,6 +1,5 @@
 package com.company;
 
-import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
@@ -9,19 +8,27 @@ import java.util.List;
  */
 public class NonConcurrentRunner {
 
-    List<Student> students;
+    List<Integer> randomNumbers;
+    int number;
 
-    public NonConcurrentRunner(List<Student> students) {
-        this.students = new ArrayList<>(students);
+    public NonConcurrentRunner(List<Integer> randomNumbers, int number) {
+        this.randomNumbers = randomNumbers;
+        this.number = number;
     }
 
     public void run() {
-        Iterator<Student> it = students.listIterator();
-        while(it.hasNext()) {
-            Student student = it.next();
-            if(student.getAge() <= 24 || student.getCourse() != Course.COMPUTER_SCIENCE) {
-                it.remove();
+        Iterator<Integer> randomNumbersIterator = randomNumbers.iterator();
+        while (randomNumbersIterator.hasNext()) {
+            Integer value = randomNumbersIterator.next();
+            if(!Calculator.isFactor(value,number) ||
+            !Calculator.isPrimeNumber(value) ||
+            !Calculator.isMersenne(value) ||
+            !Calculator.isPerfectNumber(value)) {
+                randomNumbersIterator.remove();
             }
+        }
+        for(Integer i: randomNumbers) {
+            System.out.println(i + "meets all conditions");
         }
     }
 

@@ -8,19 +8,21 @@ import java.util.List;
  */
 public class ThreadB implements Runnable {
 
-    List<Student> students;
+    List<Integer> randomNumbers;
+    int number;
 
-    public ThreadB(List<Student> students) {
-        this.students = students;
+    public ThreadB(List<Integer> randomNumbers, int number) {
+        this.randomNumbers = randomNumbers;
+        this.number = number;
     }
 
     public void run() {
-        synchronized(students) {
-            Iterator<Student> it = students.listIterator();
-            while(it.hasNext()) {
-                Student student = it.next();
-                if (student.getCourse() != Course.COMPUTER_SCIENCE) {
-                    it.remove();
+        synchronized(randomNumbers) {
+            Iterator<Integer> randomNumbersIterator = randomNumbers.iterator();
+            while (randomNumbersIterator.hasNext()) {
+            Integer value = randomNumbersIterator.next();
+            if (!Calculator.isPerfectNumber(value)) {
+                    randomNumbersIterator.remove();
                 }
             }
         }
