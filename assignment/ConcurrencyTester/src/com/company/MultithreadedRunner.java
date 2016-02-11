@@ -9,24 +9,22 @@ import java.util.concurrent.Executors;
  */
 public class MultithreadedRunner {
 
-    List<Integer> randomNumbers;
+    List<Integer> randomNumberSet;
     int number;
 
-    public MultithreadedRunner(List<Integer> randomNumbers, int number) {
-        this.randomNumbers = randomNumbers;
+    public MultithreadedRunner(List<Integer> randomNumberSet, int number) {
+        this.randomNumberSet = randomNumberSet;
         this.number = number;
     }
 
     public void run() throws InterruptedException {
-        ExecutorService executor = Executors.newFixedThreadPool(10);
-        executor.execute(new ThreadA(randomNumbers, number));
-        executor.execute(new ThreadB(randomNumbers, number));
-        executor.execute(new ThreadC(randomNumbers, number));
-        executor.execute(new ThreadD(randomNumbers, number));
+        ExecutorService executor = Executors.newCachedThreadPool();
+        executor.execute(new ThreadA(randomNumberSet, number));
+        executor.execute(new ThreadB(randomNumberSet));
         executor.shutdown();
         while(!executor.isTerminated()) {
         }
-        for(Integer i: randomNumbers) {
+        for(Integer i: randomNumberSet) {
             System.out.println(i + "meets all conditions");
         }
     }

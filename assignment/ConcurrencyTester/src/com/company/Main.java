@@ -1,9 +1,11 @@
 package com.company;
 
 import java.io.*;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.Scanner;
 
 public class Main {
 
@@ -11,22 +13,35 @@ public class Main {
         if(args.length > 0 && !args[0].isEmpty()) {
             Debug.DEBUG = Boolean.valueOf(args[0]);
         }
+        int length;
+        int range;
+        int factorOf;
+        int runs;
         Console c = System.console();
-        int length = Integer.parseInt(c.readLine("Enter set length: "));
-        int range = Integer.parseInt(c.readLine("Enter set range: "));
-        int runs = Integer.parseInt(c.readLine("Enter how many runs: "));
+        if(c != null) {
+            length = Integer.parseInt(c.readLine("Enter set length: "));
+            range = Integer.parseInt(c.readLine("Enter set range: "));
+            factorOf = Integer.parseInt(c.readLine("Enter number to find factors of: "));
+            runs = Integer.parseInt(c.readLine("Enter how many runs: "));
+        } else {
+            length = 10000;
+            range = 5000;
+            factorOf = 1000;
+            runs = 10;
+        }
+
         for(int j = 0; j < runs; j++ ) {
-            writeToCSV("results_" + length + "_" + range + ".csv", runTests(length, range));
+            writeToCSV("results_" + length + "_" + range + "_" + factorOf + ".csv", runTests(length, range, factorOf));
         }
     }
 
-    public static Double[] runTests(int length, int range) throws InterruptedException {
+    public static Double[] runTests(int length, int range, int factorOf) throws InterruptedException {
+
         List<Integer> randomNumbers = generateRandomNumbers(length, range);
-        Integer randomInteger = new Random().nextInt(range);
-        NonConcurrentRunner nonConcurrentRunner = new NonConcurrentRunner(new ArrayList<>(randomNumbers), randomInteger);
-        SerialStreamRunner serialStreamRunner = new SerialStreamRunner(new ArrayList<>(randomNumbers), randomInteger);
-        ParallelStreamRunner parallelStreamRunner = new ParallelStreamRunner(new ArrayList<>(randomNumbers), randomInteger);
-        MultithreadedRunner multithreadedRunner = new MultithreadedRunner(new ArrayList<>(randomNumbers), randomInteger);
+        NonConcurrentRunner nonConcurrentRunner = new NonConcurrentRunner(new ArrayList<>(randomNumbers), factorOf);
+        SerialStreamRunner serialStreamRunner = new SerialStreamRunner(new ArrayList<>(randomNumbers), factorOf);
+        ParallelStreamRunner parallelStreamRunner = new ParallelStreamRunner(new ArrayList<>(randomNumbers), factorOf);
+        MultithreadedRunner multithreadedRunner = new MultithreadedRunner(new ArrayList<>(randomNumbers), factorOf);
 
         System.out.println("______________________RUN STARTED______________________");
 
@@ -101,6 +116,7 @@ public class Main {
         writer.flush();
         writer.close();
     }
+
 }
 
 

@@ -21,7 +21,7 @@ public class ThreadD implements Runnable {
             Iterator<Integer> randomNumbersIterator = randomNumbers.iterator();
             while (randomNumbersIterator.hasNext()) {
             Integer value = randomNumbersIterator.next();
-            if (!Calculator.isPerfectNumber(value)) {
+            if (!Calculator.isMersenne(value)) {
                     randomNumbersIterator.remove();
                 }
             }

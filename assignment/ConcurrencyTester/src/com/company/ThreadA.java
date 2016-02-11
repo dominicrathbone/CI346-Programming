@@ -9,20 +9,20 @@ import java.util.List;
  */
 public class ThreadA implements Runnable {
 
-    List<Integer> randomNumbers;
+    List<Integer> randomNumberSet;
     int number;
 
-    public ThreadA(List<Integer> randomNumbers, int number) {
-        this.randomNumbers = randomNumbers;
+    public ThreadA(List<Integer> randomNumberSet, int number) {
+        this.randomNumberSet = randomNumberSet;
         this.number = number;
     }
 
     public void run() {
-        synchronized(randomNumbers) {
-            Iterator<Integer> randomNumbersIterator = randomNumbers.iterator();
+        synchronized(randomNumberSet) {
+            Iterator<Integer> randomNumbersIterator = randomNumberSet.iterator();
             while (randomNumbersIterator.hasNext()) {
             Integer value = randomNumbersIterator.next();
-            if (!Calculator.isFactor(value, number)) {
+            if (!Calculator.isFactor(value, number) || !Calculator.isPrimeNumber(value)) {
                     randomNumbersIterator.remove();
                 }
             }

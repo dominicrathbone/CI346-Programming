@@ -21,7 +21,7 @@ public class Calculator {
             }
         }
         if(temp == number) {
-            Debug.log(number + " is a prime number");
+            Debug.log(number + " is a perfect number");
             return true;
         } else {
             return false;
