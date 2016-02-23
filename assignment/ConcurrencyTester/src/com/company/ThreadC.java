@@ -1,5 +1,6 @@
 package com.company;
 
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
@@ -8,22 +9,19 @@ import java.util.List;
  */
 public class ThreadC implements Runnable {
 
-    List<Integer> randomNumbers;
-    int number;
+    int start;
+    int end;
+    int primeCount;
 
-    public ThreadC(List<Integer> randomNumbers, int number) {
-        this.randomNumbers = randomNumbers;
-        this.number = number;
+    public ThreadC(int start, int end) {
+        this.start = start;
+        this.end = end;
     }
 
     public void run() {
-        synchronized(randomNumbers) {
-            Iterator<Integer> randomNumbersIterator = randomNumbers.iterator();
-            while (randomNumbersIterator.hasNext()) {
-            Integer value = randomNumbersIterator.next();
-            if (!Calculator.isPrimeNumber(value)) {
-                    randomNumbersIterator.remove();
-                }
+        for (int i = start; i <= end; i++) {
+            if (!Calculator.isPrimeNumber(i)) {
+                primeCount++;
             }
         }
     }

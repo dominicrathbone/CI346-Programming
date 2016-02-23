@@ -9,22 +9,19 @@ import java.util.List;
  */
 public class ThreadA implements Runnable {
 
-    List<Integer> randomNumberSet;
-    int number;
+    int start;
+    int end;
+    int factorCount;
 
-    public ThreadA(List<Integer> randomNumberSet, int number) {
-        this.randomNumberSet = randomNumberSet;
-        this.number = number;
+    public ThreadA(int start, int end) {
+        this.start = start;
+        this.end = end;
     }
 
     public void run() {
-        synchronized(randomNumberSet) {
-            Iterator<Integer> randomNumbersIterator = randomNumberSet.iterator();
-            while (randomNumbersIterator.hasNext()) {
-            Integer value = randomNumbersIterator.next();
-            if (!Calculator.isFactor(value, number) || !Calculator.isPrimeNumber(value)) {
-                    randomNumbersIterator.remove();
-                }
+        for (int i = start; i <= end; i++) {
+            if (!Calculator.isFactor(i, end)) {
+                factorCount++;
             }
         }
     }

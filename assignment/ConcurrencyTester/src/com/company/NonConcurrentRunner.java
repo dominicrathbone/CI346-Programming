@@ -1,35 +1,38 @@
 package com.company;
 
-import java.util.Iterator;
-import java.util.List;
-
 /**
  * Created by drathbone on 22/11/15.
  */
 public class NonConcurrentRunner {
 
-    List<Integer> randomNumbers;
-    int number;
+    int start;
+    int end;
+    int factorCount;
+    int primeCount;
+    int mersenneCount;
+    int perfectNumberCount;
 
-    public NonConcurrentRunner(List<Integer> randomNumbers, int number) {
-        this.randomNumbers = randomNumbers;
-        this.number = number;
+
+    public NonConcurrentRunner(int start, int end) {
+        this.start = start;
+        this.end = end;
     }
 
     public void run() {
-        Iterator<Integer> randomNumbersIterator = randomNumbers.iterator();
-        while (randomNumbersIterator.hasNext()) {
-            Integer value = randomNumbersIterator.next();
-            if(!Calculator.isFactor(value,number) ||
-            !Calculator.isPrimeNumber(value) ||
-            !Calculator.isMersenne(value) ||
-            !Calculator.isPerfectNumber(value)) {
-                randomNumbersIterator.remove();
+        for(int i = start; i <= end; i++) {
+            if(!Calculator.isFactor(i,end)) {
+                factorCount++;
+            }
+            if(!Calculator.isPrimeNumber(i)) {
+                primeCount++;
+            }
+            if(!Calculator.isMersenne(i)) {
+                mersenneCount++;
+            }
+            if(!Calculator.isPerfectNumber(i)) {
+                perfectNumberCount++;
             }
         }
-        for(Integer i: randomNumbers) {
-            System.out.println(i + "meets all conditions");
-        }
-    }
 
+    }
 }

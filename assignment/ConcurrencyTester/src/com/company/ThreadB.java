@@ -10,22 +10,19 @@ import java.util.concurrent.LinkedBlockingDeque;
  */
 public class ThreadB implements Runnable {
 
-    List<Integer> randomNumberSet;
-    int number;
+    int start;
+    int end;
+    int mersenneCount;
 
-    public ThreadB(List<Integer> randomNumberSet) {
-        this.randomNumberSet = randomNumberSet;
-        this.number = number;
+    public ThreadB(int start, int end) {
+        this.start = start;
+        this.end = end;
     }
 
     public void run() {
-        synchronized(randomNumberSet) {
-            Iterator<Integer> randomNumbersIterator = randomNumberSet.iterator();
-            while (randomNumbersIterator.hasNext()) {
-            Integer value = randomNumbersIterator.next();
-            if (!Calculator.isPerfectNumber(value) || !Calculator.isMersenne(value)) {
-                    randomNumbersIterator.remove();
-                }
+        for (int i = start; i <= end; i++) {
+            if (!Calculator.isMersenne(i)) {
+                mersenneCount++;
             }
         }
     }
