@@ -28,8 +28,6 @@ public class SerialStreamRunner {
         .filter(i -> isMersenne(i))
         .filter(i -> isPerfect(i))
         .close();
-
-
     }
 
     public boolean isFactor(int value, int end) {

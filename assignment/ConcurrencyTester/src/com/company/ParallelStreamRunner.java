@@ -20,16 +20,13 @@ public class ParallelStreamRunner {
     }
 
     public void run() {
-        Stream
-                .iterate(start, i -> i++)
+        Stream.iterate(start, i -> i++)
                 .limit(end)
                 .filter(i -> isFactor(i, end))
                 .filter(i -> isPrime(i))
                 .filter(i -> isMersenne(i))
                 .filter(i -> isPerfect(i))
                 .close();
-
-
     }
 
     public boolean isFactor(int value, int end) {

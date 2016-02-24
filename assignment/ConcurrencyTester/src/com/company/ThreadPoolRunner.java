@@ -17,7 +17,7 @@ public class ThreadPoolRunner {
     }
 
     public void run() throws InterruptedException {
-        ExecutorService executor = Executors.newFixedThreadPool(10);
+        ExecutorService executor = Executors.newFixedThreadPool(6);
         executor.execute(new ThreadA(start, end));
         executor.execute(new ThreadB(start, end));
         executor.execute(new ThreadC(start, end));
