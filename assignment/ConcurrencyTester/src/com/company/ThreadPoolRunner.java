@@ -10,6 +10,7 @@ public class ThreadPoolRunner {
 
     int start;
     int end;
+    int cores = Runtime.getRuntime().availableProcessors();
 
     public ThreadPoolRunner(int start, int end) {
         this.start = start;
@@ -17,11 +18,11 @@ public class ThreadPoolRunner {
     }
 
     public void run() throws InterruptedException {
-        ExecutorService executor = Executors.newFixedThreadPool(6);
-        executor.execute(new ThreadA(start, end));
-        executor.execute(new ThreadB(start, end));
-        executor.execute(new ThreadC(start, end));
-        executor.execute(new ThreadD(start, end));
+        ExecutorService executor = Executors.newFixedThreadPool(cores);
+        executor.execute(new RunnableA(start, end));
+        executor.execute(new RunnableB(start, end));
+        executor.execute(new RunnableC(start, end));
+        executor.execute(new RunnableD(start, end));
         executor.shutdown();
         while(!executor.isTerminated()) {
         }

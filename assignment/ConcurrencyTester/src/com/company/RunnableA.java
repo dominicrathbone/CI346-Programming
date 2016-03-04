@@ -1,28 +1,27 @@
 package com.company;
 
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
 
 /**
  * Created by drathbone on 08/12/15.
  */
-public class ThreadA implements Runnable {
+public class RunnableA implements Runnable {
 
     int start;
     int end;
     int factorCount;
 
-    public ThreadA(int start, int end) {
+    public RunnableA(int start, int end) {
         this.start = start;
         this.end = end;
     }
 
     public void run() {
+        Debug.log("STARTED THREAD A");
         for (int i = start; i <= end; i++) {
             if (!Calculator.isFactor(i, end)) {
                 factorCount++;
             }
         }
+        Debug.log("ENDED THREAD A");
     }
 }

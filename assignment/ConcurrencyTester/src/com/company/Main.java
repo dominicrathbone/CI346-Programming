@@ -1,6 +1,7 @@
 package com.company;
 
 import java.io.*;
+import java.text.DecimalFormat;
 
 public class Main {
 
@@ -21,9 +22,9 @@ public class Main {
             end = 50000;
             runs = 10;
         }
-
+        int cores = Runtime.getRuntime().availableProcessors();
         for(int j = 0; j < runs; j++ ) {
-            writeToCSV("results_" + start + "_" + end + "_" + ".csv", runTests(start, end));
+            writeToCSV("results_" + start + "_" + end + "_" + cores + "_CORES.csv", runTests(start, end));
         }
     }
 
@@ -35,6 +36,12 @@ public class Main {
         RawMultithreadedRunner rawMultithreadedRunner = new RawMultithreadedRunner(start, end);
         ThreadPoolRunner threadPoolRunner = new ThreadPoolRunner(start, end);
 
+        nonConcurrentRunner.run();
+        rawMultithreadedRunner.run();
+        threadPoolRunner.run();
+        serialStreamRunner.run();
+        parallelStreamRunner.run();
+
         System.out.println("______________________RUN STARTED______________________");
 
         Debug.log("BEGIN NONCONCURRENT");
@@ -43,7 +50,7 @@ public class Main {
         long nonConcurrentEndTime = System.nanoTime();
         Debug.log("END NONCONCURRENT");
         long nonConcurrentTotalTime = nonConcurrentEndTime - nonConcurrentStartTime;
-        System.out.println(nonConcurrentTotalTime + " NON CONCURRENT");
+        System.out.println("NONCONCURRENT: " + new DecimalFormat("#.##########").format(nonConcurrentTotalTime) + " Seconds");
         Debug.log("__________________________________");
 
         Debug.log("BEGIN RAW MULTITHREADED");
@@ -52,7 +59,7 @@ public class Main {
         long rawMultiThreadedEndTime = System.nanoTime();
         Debug.log("END RAW MULTITHREADED");
         long rawMultiThreadedTotalTime = rawMultiThreadedEndTime - rawMultiThreadedStartTime;
-        System.out.println(rawMultiThreadedTotalTime + " RAW MULTITHREADED");
+        System.out.println("MULTITHREADED: " + new DecimalFormat("#.##########").format(rawMultiThreadedTotalTime) + " Seconds");
         Debug.log("__________________________________");
 
         Debug.log("BEGIN THREADPOOLED");
@@ -61,7 +68,7 @@ public class Main {
         long threadPoolEndTime = System.nanoTime();
         Debug.log("END THREADPOOLED");
         long threadPoolTotalTime = threadPoolEndTime - threadPoolStartTime;
-        System.out.println(threadPoolTotalTime + " THREAD POOL");
+        System.out.println("THREADPOOLED: " + new DecimalFormat("#.##########").format(threadPoolTotalTime) + " Seconds");
         Debug.log("__________________________________");
 
         Debug.log("BEGIN SERIAL STREAM");
@@ -70,7 +77,7 @@ public class Main {
         long serialStreamEndTime = System.nanoTime();
         Debug.log("END SERIAL STREAM");
         long serialStreamTotalTime = serialStreamEndTime - serialStreamStartTime;
-        System.out.println(serialStreamTotalTime + " SERIAL STREAM");
+        System.out.println("SERIAL STREAM: " + new DecimalFormat("#.##########").format(serialStreamTotalTime) + " Seconds");
         Debug.log("__________________________________");
 
         Debug.log("BEGIN PARALLEL STREAM");
@@ -79,7 +86,7 @@ public class Main {
         long parallelStreamEndTime = System.nanoTime();
         Debug.log("END PARALLEL STREAM");
         long parallelStreamTotalTime = parallelStreamEndTime - parallelStreamStartTime;
-        System.out.println(parallelStreamTotalTime + " PARALLEL STREAM");
+        System.out.println("PARALLEL STREAM: " + new DecimalFormat("#.##########").format(parallelStreamTotalTime) + " Seconds");
         Debug.log("__________________________________");
 
         System.out.println("_____________________RUN FINISHED______________________");

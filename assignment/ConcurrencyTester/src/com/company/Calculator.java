@@ -7,7 +7,6 @@ public class Calculator {
 
     public static boolean isFactor(int factor, int number) {
         if(number % factor == 0 && factor != 1 && factor != number) {
-            Debug.log(factor + " is a factor of " + number);
             return true;
         }
         return false;
@@ -21,7 +20,6 @@ public class Calculator {
             }
         }
         if(temp == number) {
-            Debug.log(number + " is a perfect number");
             return true;
         } else {
             return false;
@@ -42,7 +40,6 @@ public class Calculator {
             return true;
         } else {
             if (number >= 2) {
-                Debug.log(number + " is a prime number");
                 return true;
             }
             else {
@@ -57,7 +54,6 @@ public class Calculator {
             powerOfTwo *= 2;
         }
         if(number == (powerOfTwo - 1)) {
-            Debug.log(number + " is a mersenne number");
             return true;
         }
         return false;

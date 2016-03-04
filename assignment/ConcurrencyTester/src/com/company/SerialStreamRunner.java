@@ -20,47 +20,41 @@ public class SerialStreamRunner {
     }
 
     public void run() {
-        Stream
-        .iterate(start, i -> i++)
-        .limit(end)
-        .filter(i -> isFactor(i, end))
-        .filter(i -> isPrime(i))
-        .filter(i -> isMersenne(i))
-        .filter(i -> isPerfect(i))
-        .close();
+        Stream.iterate(start, i -> i + 1)
+                .limit(end)
+                .map(i -> isFactor(i, end))
+                .map(i -> isPrime(i))
+                .map(i -> isMersenne(i))
+                .map(i -> isPerfect(i))
+                .count();
     }
 
-    public boolean isFactor(int value, int end) {
-        if(Calculator.isFactor(value, end)) {
+    public int isFactor(int value, int end) {
+        if (Calculator.isFactor(value, end)) {
             factorCount++;
-            return true;
         }
-        return false;
+        return value;
     }
 
-    public boolean isPrime(int value) {
-        if(Calculator.isPrimeNumber(value)) {
+    public int isPrime(int value) {
+        if (Calculator.isPrimeNumber(value)) {
             primeCount++;
-            return true;
         }
-        return false;
+        return value;
     }
 
-    public boolean isMersenne(int value) {
-        if(Calculator.isMersenne(value)) {
+    public int isMersenne(int value) {
+        if (Calculator.isMersenne(value)) {
             mersenneCount++;
-            return true;
         }
-        return false;
+        return value;
     }
 
-    public boolean isPerfect(int value) {
-        if(Calculator.isPerfectNumber(value)) {
+    public int isPerfect(int value) {
+        if (Calculator.isPerfectNumber(value)) {
             perfectNumberCount++;
-            return true;
         }
-        return false;
+        return value;
     }
-
-
 }
+
