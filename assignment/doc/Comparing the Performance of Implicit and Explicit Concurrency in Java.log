@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.10.27)  24 FEB 2016 15:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.10.27)  5 MAR 2016 19:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -99,39 +99,39 @@ File: omlcmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 50.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 119.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 119.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[3
+ [3
 
 ]
+Appendix B.
+[4
 
-LaTeX Warning: Text page 4 contains only floats.
+]
+Appendix C.
+[5
 
-[4] [5]
+]
+Appendix D.
+[6
+
+]
+Appendix E.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 127.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 127.
+[7
+
+]
+Appendix F.
+[8
+
+]
 (./Comparing the Performance of Implicit and Explicit Concurrency in Java.aux) 
 ) 
 Here is how much of TeX's memory you used:
  1638 strings out of 495025
  23526 string characters out of 6181514
- 135829 words of memory out of 5000000
+ 99829 words of memory out of 5000000
  4900 multiletter control sequences out of 15000+600000
  8808 words of font info for 31 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -144,10 +144,10 @@ f-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmsy10.pfb>
 Output written on "Comparing the Performance of Implicit and Explicit Concurren
-cy in Java.pdf" (6 pages, 94693 bytes).
+cy in Java.pdf" (9 pages, 96956 bytes).
 PDF statistics:
- 51 PDF objects out of 1000 (max. 8388607)
- 35 compressed objects within 1 object stream
+ 62 PDF objects out of 1000 (max. 8388607)
+ 43 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
