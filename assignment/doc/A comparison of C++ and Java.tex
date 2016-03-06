@@ -18,18 +18,24 @@ C++ was developed by a Computer Scientist named Bjarne Stroustrup, arising from 
 On the other hand, Java was produced at Sun Microsystems (Now, Oracle) in secret, by team known as the "Green Team" with the intentions of creating a modern alternative to C++ which was the most popular language at the time. The idea was spawned out of the green team's frustations with the C/C++ APIs that Sun had been using. It aimed to retain most of the feature set that C++ had whilst removing the unnecessary, outdated parts. During the process of becoming Java, it went through two iterations of names, "C++ ++--" and then Oak.\cite{HistoryJava}
 
 \section{Paradigms}
-As mentioned above, both C++ and Java are languages that support the object oriented paradigm. This concept describes how a system can be modelled as structures known as "objects" that contain the data that describe them as well as the operations that manipulate and use this data. This is based on the imperative programming paradigm, where a language has the ability to control the flow and state of a system.
+As mentioned above, both C++ and Java are languages that support the object oriented paradigm. This concept describes how a system can be modelled as structures known as "objects" that contain the data that describe them as well as the operations that manipulate and use this data. This is based on the imperative programming paradigm, where a language has the ability to control the flow and state of a system. \cite{Paradigms}
 
 \section{Typing}
-Java is statically typed the code is type-checked at compilation time and strongly typed (relative to other languages) as a new variable declared as one type cannot be initialised or changed to be another type. For example, if a new integer is declared and initialised as a string, the compiler will throw an error as the types are mismatched. This is in contrast to dynamic typing where type-checking happens at runtime. Whilst static typing restricts what a programmer can do with a variable, it has the obvious benefit of preventing potentially serious errors from occuring. 	
+Java is considered statically typed as the code is checked for type errors at compilation time. This is in contrast to dynamic typing where type-checking happens at runtime and so errors will only occur if the code containing them is executed. It can also be considered strongly typed (relative to other languages) as it has a safe type-system where a variable declared as one type cannot be initialised or changed to be another type. For example, if a new variable is initialised as an integer and then a string is added to it (see Appendix A), the compiler will throw an error as the types are mismatched. Whilst static and strong typing restricts what a programmer can do with a variable, it has the obvious benefit of preventing potentially serious errors from occuring. 	
 
-Although C++ is statically typed, it can be said to be weakly typed as the compiler does not prevent some errors from occuring and thus they can occur at runtime.
+Although C++ is mostly statically typed, it can also be said to be weakly typed as types can be be implicitly converted from one to another through a variety of means. For example, a short can be implicitly cast to an integer because they are both of numerical types (see Appendix B). It also allows implicit casting of any type pointers to a void pointer (one which contains no type information). However, in contrast to it's predecessor C, it doesn't allow conversion from void pointers to a type pointer without an explicit cast (see Appendix B). This is an example of how it could be argued that C++ is strongly typed (in comparison to C).
 
 Both languages contain the notion of primitive types which are basic, predefined types such as integers or booleans which have the purpose of acting as building blocks within the language.
 
+\section{Arguments \& Parameters}
+In Java, objects passed into a method via it's parameters are pass-by-value as opposed to pass-by-reference. Pass-by-value means that when you pass through an argument to a function, it passes through a copy of the pointer to that argument. In Java, this means that when you pass through an object into a method, the value of the parameter inside the method will reference that object but it is not the object itself (see Appendix C). \cite{ParametersJava}
+
+In C++, you can pass parameters either via pass-by-value (see Appendix D, figure 1) or via pass-by-reference. Pass-by-reference means that when you pass an argument into a function, the parameter inside will reference the actual argument being passed through. This means changes made inside the function scope will effect the object outside the function scope. To pass by reference in C++, you use the address-of operator, symbolized by an ambersand (see Appendix D, figure 2) \cite{ParametersC++}.
+
 \section{Memory Management}
-Java Garbage Collection
-C++ Pointers
+Java can be considered memory-safe as you can not directly control how memory is managed. Instead, the Java virtual machine has garbage collection. This is the process of automatically freeing up memory for re-use at runtime by tracking live objects whilst declaring everything else as garbage taking up memory. The JVM does this by allocating a new object space in a memory array called the "heap" defined at JVM start up. When the object goes unreferenced, the garbage collector  reclaims the memory in this space and it is available for reuse by other objects. Although this is efficient, the space reclaimed by the garbage collector isn't ever actually given back to the operating system and the java program will always take up the amount of initial heap space defined at the start which can cause potential performance problems if this space is too large, especially when considering the process already takes up more resources as it is automated \cite{MemoryJava}.
+
+On the other hand, in C++, there a variety of ways to manage memory. Although it lacks implicit garbage collection, it can be implemented explicitly via libraries such as the "Boehm collector" library \cite{Boehm}. However, there are many ways of managing memory in C++ such as Resource Allocation as Initialization (RAII).
 
 \section{Compilation}
 
@@ -49,23 +55,95 @@ Can the user influence the priority of threads/ tasks
 	www.cplusplus.com/info/history/
 	\bibitem{HistoryJava}
 	https://www.santarosa.edu/\textasciitilde{}dpearson/mirrored\_pages/java.sun.com/Java\_Technology\_-\_An\_early\_history.pdf
+	\bibitem{Paradigms}
+	\bibitem{TypingJava}
+	\bibitem{TypingC++}	
+	\bibitem{ParametersJava}
+	http://www.yoda.arachsys.com/java/passing.html
+	\bibitem{ParametersC++}
+	http://www.learncpp.com/cpp-tutorial/73-passing-arguments-by-reference/
+	\bibitem{MemoryJava}
+	http://www.dynatrace.com/en/javabook/how-garbage-collection-works.html
+	\bibitem{MemoryC++}
+	\bibitem{Boehm}
+		http://hboehm.info/gc/
 \end{thebibliography}
 
 \appendix
 \chapter{}
 \begin{figure}[h!]
+	\caption{Typing in Java}
 	\begin{lstlisting}[language=Java,frame=single]
 //this will cause a compilation error
 // as "hello" isn't of type int.
 int a = 1;
-a = "hello";
+a = a + "hello";
 	\end{lstlisting}
-		\begin{lstlisting}[language=Java,frame=single]
+	\begin{lstlisting}[language=Java,frame=single]
 //this will cause a compilation error
 //as the variable isn't declared.
 a = 1;
-		\end{lstlisting}
+	\end{lstlisting}
 \end{figure}
 
+\chapter{}
+\begin{figure}[h!]
+	\caption{Implicit Type Conversion in C++}
+	\begin{lstlisting}[language=C++,frame=single]
+//this is allowed as they are both primitive, 
+//numerical types.
+int i = 1;
+short s;
+s = i;
+	\end{lstlisting}
+	\caption{Void pointer in C++}
+	\begin{lstlisting}[language=C++,frame=single]
+//Although this is allowed, it will have to be cast
+//back to a non-void type before being used.
+void *voidPointer;
+int i = 5;
+pVoid = &i; 
+	\end{lstlisting}
+\end{figure}
+
+\chapter{}
+\begin{figure}[h!]
+	\caption{Pass-By-Value in Java}
+	\begin{lstlisting}[language=Java,frame=single]
+Car aCar = new Car("Ford", "Mustang");
+foo(aCar);
+
+public void foo(Car bCar) {
+//This will change the name of the object aCar is 
+//pointing to as they both point to the same object.
+	bCar.setModel("Mondeo");
+//This will not change what object aCar is pointing to,
+// only what object bCar points to.
+	bCar = new Car("Vauxhall", "Astra");
+}
+	\end{lstlisting}
+\end{figure}
+
+\chapter{}
+\begin{figure}[h!]
+	\caption{Pass-By-Value in C++}
+	\begin{lstlisting}[language=C++,frame=single]
+int a = 13;
+printNumber(a);
+void printNumber(int b)
+{
+	b=10;	// this wont effect a
+}
+	\end{lstlisting}
+	\caption{Pass-By-Reference in C++}
+	\begin{lstlisting}[language=C++,frame=single]
+int a = 13;
+printNumber(a);
+void printNumber(int &b)
+{
+	b=10;	// this will make a=10;
+}
+	\end{lstlisting}
+\end{figure}
 
 \end{document}          
