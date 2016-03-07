@@ -33,16 +33,22 @@ In Java, objects passed into a method via it's parameters are pass-by-value as o
 In C++, you can pass parameters either via pass-by-value (see Appendix D, figure 1) or via pass-by-reference. Pass-by-reference means that when you pass an argument into a function, the parameter inside will reference the actual argument being passed through. This means changes made inside the function scope will effect the object outside the function scope. To pass by reference in C++, you use the address-of operator, symbolized by an ambersand (see Appendix D, figure 2) \cite{ParametersC++}.
 
 \section{Memory Management}
-Java can be considered memory-safe as you can not directly control how memory is managed. Instead, the Java virtual machine has garbage collection. This is the process of automatically freeing up memory for re-use at runtime by tracking live objects whilst declaring everything else as garbage taking up memory. The JVM does this by allocating a new object space in a memory array called the "heap" defined at JVM start up. When the object goes unreferenced, the garbage collector  reclaims the memory in this space and it is available for reuse by other objects. Although this is efficient, the space reclaimed by the garbage collector isn't ever actually given back to the operating system and the java program will always take up the amount of initial heap space defined at the start which can cause potential performance problems if this space is too large, especially when considering the process already takes up more resources as it is automated \cite{MemoryJava}.
 
-On the other hand, in C++, there a variety of ways to manage memory. Although it lacks implicit garbage collection, it can be implemented explicitly via libraries such as the "Boehm collector" library \cite{Boehm}. However, there are many ways of managing memory in C++ such as Resource Allocation as Initialization (RAII).
+Memory can be split up into parts, mainly the stack and the heap. The former is the memory which stores predetermined values such as function calls and local variables that are not used outside of a method's scope. The later is considered "dynamic memory", where dynamically created variables such as objects are stored.
+
+Java can be considered memory-safe as you can not directly control how this memory is managed. Instead, the Java virtual machine has garbage collection. This is the process of automatically freeing up dynamic memory for re-use at runtime by tracking live objects whilst declaring everything else as garbage taking up memory. The JVM does this by allocating a new object space in the heap defined at it's start up. When the object goes unreferenced, the garbage collector reclaims the memory in this space and it is available for reuse by other objects. Although this is efficient, the space reclaimed by the garbage collector isn't ever actually given back to the operating system and the java program will always take up the amount of initial heap space defined at the start which can cause potential performance problems if this space is too large, especially when considering the process already takes up more resources as it is automated \cite{MemoryJava}.
+
+On the other hand, in C++, memory isn't handled by a virtual machine. The task of allocating the addresses at which a variable's value should be held is handled by the operating system. In C++, managing the object's creation and deletion to and from dynamic memory is a manual task which is achieved by the new and delete operators (see Appendix E). However, in a big system, this can be a laborous task to do manually and if done incorrectly, it can result in memory/resource leaks. To counter this, there are techniques such as smart pointers that wrap raw pointers and handle the creation and deletion automatically. Another technique is explicit garbage collection, although C++ lacks this implicitly, it can be implemented via libraries such as the "Boehm collector" library. \cite{Boehm}. 
 
 \section{Compilation}
+With Java, compilation is handled by a compiler called javac. This converts the raw Java source code to byte code, a series of instructions contained within a class file that are then interpreted by the JVM and compiled to native machine code at runtime (this is called Just-In-Time compilation). However, dependent on implementation of the JVM, Java code can be interpreted or compiled in many ways. The key advantage and purpose of the JVM is that it means Java can be ran on any machine as it doesn't use a platform-dependent compiler.
+
+C++ differs in this sense as it uses platform-dependent compilers so if code is written that uses a library specific to mac, it would compile for mac it most likely wouldn't on a windows machine. Although it lacks cross platform functionality, this means the machines don't have the overhead of running the JVM, making them inherently more performant. It also gives more freedom to the developer as they are closer to the machine	and thus can optimise resource/memory usage more accurately.
 
 \section{Concurrency}
 Preventing the corruption of shared data between
 concurrently executing threads/ tasks.
-Synchronisation of threads/ tasks to prevent race
+Synchronisation of threads/ tasks to prevent rac
 conditions.
 Can the user influence the priority of threads/ tasks
 
@@ -141,8 +147,21 @@ int a = 13;
 printNumber(a);
 void printNumber(int &b)
 {
-	b=10;	// this will make a=10;
+	b=10; // this will make a=10
 }
+	\end{lstlisting}
+\end{figure}
+
+\chapter{}
+\begin{figure}[h!]
+	\caption{new and delete operators in C++}
+	\begin{lstlisting}[language=C++,frame=single]
+//creates a new array in dynamic memory.
+bool * boolArray;
+boolArray = new bool[5]; 
+
+//deletes array from dynamic memory, freeing space.
+delete [] boolArray; 
 	\end{lstlisting}
 \end{figure}
 
