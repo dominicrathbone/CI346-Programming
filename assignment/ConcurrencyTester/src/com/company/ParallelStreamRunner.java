@@ -26,7 +26,6 @@ public class ParallelStreamRunner {
             .map(i -> isFactor(i, end))
             .map(i -> isPrime(i))
             .map(i -> isMersenne(i))
-            .map(i -> isPerfect(i))
             .count();
     }
 
@@ -47,13 +46,6 @@ public class ParallelStreamRunner {
     public int isMersenne(int value) {
         if (Calculator.isMersenne(value)) {
             mersenneCount++;
-        }
-        return value;
-    }
-
-    public int isPerfect(int value) {
-        if (Calculator.isPerfectNumber(value)) {
-            perfectNumberCount++;
         }
         return value;
     }

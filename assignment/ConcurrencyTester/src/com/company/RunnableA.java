@@ -6,21 +6,19 @@ package com.company;
  */
 public class RunnableA implements Runnable {
 
-    int start;
+    int number;
     int end;
     int factorCount;
 
-    public RunnableA(int start, int end) {
-        this.start = start;
+    public RunnableA(int number, int end) {
+        this.number = number;
         this.end = end;
     }
 
     public void run() {
         Debug.log("STARTED THREAD A");
-        for (int i = start; i <= end; i++) {
-            if (!Calculator.isFactor(i, end)) {
-                factorCount++;
-            }
+        if (!Calculator.isFactor(number, end)) {
+            factorCount++;
         }
         Debug.log("ENDED THREAD A");
     }

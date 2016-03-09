@@ -29,9 +29,6 @@ public class NonConcurrentRunner {
             if(!Calculator.isMersenne(i)) {
                 mersenneCount++;
             }
-            if(!Calculator.isPerfectNumber(i)) {
-                perfectNumberCount++;
-            }
         }
     }
 }

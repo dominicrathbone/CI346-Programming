@@ -5,24 +5,18 @@ package com.company;
  */
 public class RunnableB implements Runnable {
 
-    int start;
-    int end;
+    int number;
     int mersenneCount;
 
-    public RunnableB(int start, int end) {
-        this.start = start;
-        this.end = end;
+    public RunnableB(int number) {
+        this.number = number;
     }
 
     public void run() {
         Debug.log("STARTED THREAD B");
-
-        for (int i = start; i <= end; i++) {
-            if (!Calculator.isMersenne(i)) {
-                mersenneCount++;
-            }
+        if (!Calculator.isMersenne(number)) {
+            mersenneCount++;
         }
-
         Debug.log("ENDED THREAD B");
     }
 }

@@ -50,7 +50,7 @@ public class Main {
         long nonConcurrentEndTime = System.nanoTime();
         Debug.log("END NONCONCURRENT");
         long nonConcurrentTotalTime = nonConcurrentEndTime - nonConcurrentStartTime;
-        System.out.println("NONCONCURRENT: " + new DecimalFormat("#.##########").format(nonConcurrentTotalTime) + " Seconds");
+        System.out.println("NONCONCURRENT: " +nonConcurrentTotalTime);
         Debug.log("__________________________________");
 
         Debug.log("BEGIN RAW MULTITHREADED");
@@ -59,7 +59,7 @@ public class Main {
         long rawMultiThreadedEndTime = System.nanoTime();
         Debug.log("END RAW MULTITHREADED");
         long rawMultiThreadedTotalTime = rawMultiThreadedEndTime - rawMultiThreadedStartTime;
-        System.out.println("MULTITHREADED: " + new DecimalFormat("#.##########").format(rawMultiThreadedTotalTime) + " Seconds");
+        System.out.println("MULTITHREADED: " + rawMultiThreadedTotalTime);
         Debug.log("__________________________________");
 
         Debug.log("BEGIN THREADPOOLED");
@@ -68,7 +68,7 @@ public class Main {
         long threadPoolEndTime = System.nanoTime();
         Debug.log("END THREADPOOLED");
         long threadPoolTotalTime = threadPoolEndTime - threadPoolStartTime;
-        System.out.println("THREADPOOLED: " + new DecimalFormat("#.##########").format(threadPoolTotalTime) + " Seconds");
+        System.out.println("THREADPOOLED: " + threadPoolTotalTime);
         Debug.log("__________________________________");
 
         Debug.log("BEGIN SERIAL STREAM");
@@ -77,7 +77,7 @@ public class Main {
         long serialStreamEndTime = System.nanoTime();
         Debug.log("END SERIAL STREAM");
         long serialStreamTotalTime = serialStreamEndTime - serialStreamStartTime;
-        System.out.println("SERIAL STREAM: " + new DecimalFormat("#.##########").format(serialStreamTotalTime) + " Seconds");
+        System.out.println("SERIAL STREAM: " + serialStreamTotalTime);
         Debug.log("__________________________________");
 
         Debug.log("BEGIN PARALLEL STREAM");
@@ -86,7 +86,7 @@ public class Main {
         long parallelStreamEndTime = System.nanoTime();
         Debug.log("END PARALLEL STREAM");
         long parallelStreamTotalTime = parallelStreamEndTime - parallelStreamStartTime;
-        System.out.println("PARALLEL STREAM: " + new DecimalFormat("#.##########").format(parallelStreamTotalTime) + " Seconds");
+        System.out.println("PARALLEL STREAM: " + parallelStreamTotalTime);
         Debug.log("__________________________________");
 
         System.out.println("_____________________RUN FINISHED______________________");

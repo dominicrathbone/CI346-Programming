@@ -5,24 +5,28 @@ package com.company;
  */
 public class RunnableD implements Runnable {
 
-    int start;
+    int number;
     int end;
-    int perfectNumberCount;
+    int factorCount;
+    int primeCount;
+    int mersenneCount;
 
-    public RunnableD(int start, int end) {
-        this.start = start;
+    public RunnableD(int number, int end) {
+        this.number = number;
         this.end = end;
     }
 
     public void run() {
         Debug.log("STARTED THREAD D");
-
-        for (int i = start; i <= end; i++) {
-            if (!Calculator.isPerfectNumber(i)) {
-                perfectNumberCount++;
+            if(!Calculator.isFactor(number,end)) {
+                factorCount++;
             }
-        }
-
+            if(!Calculator.isPrimeNumber(number)) {
+                primeCount++;
+            }
+            if(!Calculator.isMersenne(number)) {
+                mersenneCount++;
+            }
         Debug.log("ENDED THREAD D");
     }
 }

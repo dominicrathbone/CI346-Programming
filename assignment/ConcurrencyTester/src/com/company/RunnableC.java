@@ -5,24 +5,18 @@ package com.company;
  */
 public class RunnableC implements Runnable {
 
-    int start;
-    int end;
+    int number;
     int primeCount;
 
-    public RunnableC(int start, int end) {
-        this.start = start;
-        this.end = end;
+    public RunnableC(int number) {
+        this.number = number;
     }
 
     public void run() {
         Debug.log("STARTED THREAD C");
-
-        for (int i = start; i <= end; i++) {
-            if (!Calculator.isPrimeNumber(i)) {
-                primeCount++;
-            }
+        if (!Calculator.isPrimeNumber(number)) {
+            primeCount++;
         }
-
         Debug.log("ENDED THREAD C");
     }
 }

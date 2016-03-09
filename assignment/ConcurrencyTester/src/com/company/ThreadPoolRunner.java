@@ -1,7 +1,9 @@
 package com.company;
 
+import java.util.ArrayList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 /**
  * Created by drathbone on 22/11/15.
@@ -19,12 +21,24 @@ public class ThreadPoolRunner {
 
     public void run() throws InterruptedException {
         ExecutorService executor = Executors.newFixedThreadPool(cores);
-        executor.execute(new RunnableA(start, end));
-        executor.execute(new RunnableB(start, end));
-        executor.execute(new RunnableC(start, end));
-        executor.execute(new RunnableD(start, end));
-        executor.shutdown();
-        while(!executor.isTerminated()) {
+        ArrayList<Future> futures = new ArrayList<>();
+
+        for ( int n = start; n < end; n++ )
+        {
+            futures.add(executor.submit(new RunnableA(n, end)));
+            futures.add(executor.submit(new RunnableB(n)));
+            futures.add(executor.submit(new RunnableC(n)));
         }
+        for (Future future : futures)
+        {
+            try
+            {
+                future.get();
+            } catch (Exception e)
+            {
+                System.err.println("ERROR");
+            }
+        }
+        executor.shutdown();
     }
 }
