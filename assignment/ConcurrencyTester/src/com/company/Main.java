@@ -31,7 +31,7 @@ public class Main {
             runs = 10;
         }
         for(int j = 0; j < runs; j++ ) {
-            writeToCSV("results_" + START + "_" + END + "_" + CORES + "_CORES.csv", runTests());
+            writeToCSV("results_" + CORES + "_CORES.csv", runTests());
         }
     }
 
@@ -65,21 +65,28 @@ public class Main {
         double rawMultiThreadedTotalTime = (double) (rawMultiThreadedEndTime - rawMultiThreadedStartTime)/1_000_000_000;
         double threadPoolTotalTime = (double) (threadPoolEndTime - threadPoolStartTime)/1_000_000_000;
 
-        System.out.println("NONCONCURRENT: " +nonConcurrentTotalTime);
-        System.out.println("SERIAL STREAM: " + serialStreamTotalTime);
-        System.out.println("PARALLEL STREAM: " + parallelStreamTotalTime);
-        System.out.println("MULTITHREADED: " + rawMultiThreadedTotalTime);
-        System.out.println("THREADPOOLED: " + threadPoolTotalTime);
-        System.out.println("_____________________RUN FINISHED______________________");
+        System.out.printf("NONCONCURRENT: %6.4f secs\n", nonConcurrentTotalTime);
+        System.out.printf("SERIAL STREAM:  %6.4f secs\n", serialStreamTotalTime);
+        System.out.printf("PARALLEL STREAM:  %6.4f secs\n", parallelStreamTotalTime);
+        System.out.printf("MULTITHREADED:  %6.4f secs\n", rawMultiThreadedTotalTime);
+        System.out.printf("THREADPOOLED:  %6.4f secs\n", threadPoolTotalTime);
 
+        Double nonConcurrentSerialStreamRatio = nonConcurrentTotalTime / serialStreamTotalTime;
         Double nonConcurrentRawMultiThreadedRatio = nonConcurrentTotalTime / rawMultiThreadedTotalTime;
         Double nonConcurrentThreadPoolRatio =  nonConcurrentTotalTime / threadPoolTotalTime;
-        Double serialStreamParallelStreamRatio = serialStreamTotalTime / parallelStreamTotalTime;
+        Double nonConcurrentParallelStreamRatio = nonConcurrentTotalTime / parallelStreamTotalTime;
+        System.out.printf("NONCONCURRENT/MULTITHREADED RATIO: 1:%5.3f\n", nonConcurrentRawMultiThreadedRatio);
+        System.out.printf("NONCONCURRENT/THREAD POOL RATIO: 1:%5.3f\n", nonConcurrentThreadPoolRatio);
+        System.out.printf("NONCONCURRENT/SERIAL STREAM RATIO: 1:%5.3f\n", nonConcurrentSerialStreamRatio);
+        System.out.printf("NONCONCURRENT/PARALLEL STREAM: 1:%5.3f\n", nonConcurrentParallelStreamRatio);
+
+        System.out.println("_____________________RUN FINISHED______________________");
 
         return new Double[] {
                 nonConcurrentRawMultiThreadedRatio,
                 nonConcurrentThreadPoolRatio,
-                serialStreamParallelStreamRatio
+                nonConcurrentSerialStreamRatio,
+                nonConcurrentParallelStreamRatio
         };
     }
 
@@ -88,11 +95,13 @@ public class Main {
         dir.mkdir();
         BufferedWriter writer = new BufferedWriter(new FileWriter(dir + "/" + fileName, true));
         BufferedReader reader = new BufferedReader(new FileReader(dir + "/" + fileName));
-        String header = "NC/RMT ratio, NC/TP ratio, SS/PS ratio";
+        String header = "START VALUE, END VALUE, NC/MT ratio, NC/TP ratio, NC/SS ratio, NC/PS ratio";
         if(reader.readLine() == null) {
             writer.append(header);
             writer.append("\n");
         }
+        writer.append(START + ",");
+        writer.append(END + ",");
         for(int j = 0; j < data.length; j++) {
             writer.append(data[j].toString());
             writer.append(",");
@@ -135,8 +144,7 @@ public class Main {
     public static void multiThreaded() {
         ArrayList<Thread> threads = new ArrayList<>();
         for (long n = START; n < END; n++) {
-            Runnable runnableA = new RunnableA(n);
-            Thread thread = new Thread(runnableA);
+            Thread thread = new Thread(new RunnableA(n));
             thread.start();
             threads.add(thread);
         }
