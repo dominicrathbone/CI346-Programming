@@ -2,6 +2,7 @@ package com.company;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
@@ -14,24 +15,34 @@ public class Main {
     public static int CORES = Runtime.getRuntime().availableProcessors();
 
     public static void main(String[] args) throws InterruptedException, IOException {
-        if(args.length > 0 && !args[0].isEmpty()) {
-            Debug.DEBUG = Boolean.valueOf(args[0]);
-        }
-
         int runs;
 
         Console c = System.console();
         if(c != null) {
-            START = Integer.parseInt(c.readLine("Enter start: "));
-            END = Integer.parseInt(c.readLine("Enter end: "));
-            runs = Integer.parseInt(c.readLine("Enter how many runs: "));
+            if(Boolean.parseBoolean(c.readLine("Choose own runs? (true/false)"))) {
+                START = Integer.parseInt(c.readLine("Enter start: "));
+                END = Integer.parseInt(c.readLine("Enter end: "));
+                runs = Integer.parseInt(c.readLine("Enter how many runs: "));
+                for(int j = 0; j < runs; j++ ) {
+                    writeToCSV("results_" + CORES + "_CORES.csv", runTests());
+                }
+            } else {
+                runs = 5;
+                for(int i = 10; i <= 100000; i = i * 10) {
+                    START = 100 * i;
+                    END = 200 * i;
+                    for (int j = 0; j < runs; j++) {
+                        writeToCSV("results_" + CORES + "_CORES.csv", runTests());
+                    }
+                }
+            }
         } else {
-            START = 1000000;
-            END = 2000000;
+            START = 800_000_000;
+            END = START + 1_000_000;
             runs = 10;
-        }
-        for(int j = 0; j < runs; j++ ) {
-            writeToCSV("results_" + CORES + "_CORES.csv", runTests());
+            for(int j = 0; j < runs; j++ ) {
+                writeToCSV("results_" + CORES + "_CORES.csv", runTests());
+            }
         }
     }
 
@@ -42,33 +53,31 @@ public class Main {
         long nonConcurrentStartTime = System.nanoTime();
         nonConcurrent();
         long nonConcurrentEndTime = System.nanoTime();
+        double nonConcurrentTotalTime = (double) (nonConcurrentEndTime - nonConcurrentStartTime)/1_000_000_000;
+        System.out.printf("NONCONCURRENT: %6.4f secs\n", nonConcurrentTotalTime);
 
         long serialStreamStartTime = System.nanoTime();
         serialStream();
         long serialStreamEndTime = System.nanoTime();
+        double serialStreamTotalTime = (double) (serialStreamEndTime - serialStreamStartTime)/1_000_000_000;
+        System.out.printf("SERIAL STREAM:  %6.4f secs\n", serialStreamTotalTime);
 
         long parallelStreamStartTime = System.nanoTime();
         parallelStream();
         long parallelStreamEndTime = System.nanoTime();
+        double parallelStreamTotalTime = (double) (parallelStreamEndTime - parallelStreamStartTime)/1_000_000_000;
+        System.out.printf("PARALLEL STREAM:  %6.4f secs\n", parallelStreamTotalTime);
 
         long rawMultiThreadedStartTime = System.nanoTime();
-        multiThreaded();
+        multiThreaded2();
         long rawMultiThreadedEndTime = System.nanoTime();
+        double rawMultiThreadedTotalTime = (double) (rawMultiThreadedEndTime - rawMultiThreadedStartTime)/1_000_000_000;
+        System.out.printf("MULTITHREADED:  %6.4f secs\n", rawMultiThreadedTotalTime);
 
         long threadPoolStartTime = System.nanoTime();
         threadPool();
         long threadPoolEndTime = System.nanoTime();
-
-        double nonConcurrentTotalTime = (double) (nonConcurrentEndTime - nonConcurrentStartTime)/1_000_000_000;
-        double serialStreamTotalTime = (double) (serialStreamEndTime - serialStreamStartTime)/1_000_000_000;
-        double parallelStreamTotalTime = (double) (parallelStreamEndTime - parallelStreamStartTime)/1_000_000_000;
-        double rawMultiThreadedTotalTime = (double) (rawMultiThreadedEndTime - rawMultiThreadedStartTime)/1_000_000_000;
         double threadPoolTotalTime = (double) (threadPoolEndTime - threadPoolStartTime)/1_000_000_000;
-
-        System.out.printf("NONCONCURRENT: %6.4f secs\n", nonConcurrentTotalTime);
-        System.out.printf("SERIAL STREAM:  %6.4f secs\n", serialStreamTotalTime);
-        System.out.printf("PARALLEL STREAM:  %6.4f secs\n", parallelStreamTotalTime);
-        System.out.printf("MULTITHREADED:  %6.4f secs\n", rawMultiThreadedTotalTime);
         System.out.printf("THREADPOOLED:  %6.4f secs\n", threadPoolTotalTime);
 
         Double nonConcurrentSerialStreamRatio = nonConcurrentTotalTime / serialStreamTotalTime;
@@ -114,8 +123,7 @@ public class Main {
     public static void nonConcurrent() {
         for ( long n = START; n < END; n++ ) {
             int primeCount = 0;
-            if (Calculator.isPrimeNumber(n) )
-            {
+            if (Calculator.isMersennePrime(n)) {
                 primeCount++;
             }
         }
@@ -124,25 +132,22 @@ public class Main {
     public static void serialStream() {
         long primeCount = Stream
                 .iterate(START, n -> n + 1)
-                .limit(END)
-                .filter( n -> Calculator.isPrimeNumber(n) )
+                .limit(END-START)
+                .filter( n -> Calculator.isMersennePrime(n) )
                 .count();
     }
 
     public static void parallelStream() {
-        Stream<Integer> numbers =
-                Stream.iterate(START, n -> n + 1).limit(END);
-
         long primeCount = Stream
                 .iterate(START, n -> n + 1)
-                .limit(END)
+                .limit(END-START)
                 .parallel()
-                .filter( n -> Calculator.isPrimeNumber(n) )
+                .filter(n -> Calculator.isMersennePrime(n) )
                 .count();
     }
 
     public static void multiThreaded() {
-        ArrayList<Thread> threads = new ArrayList<>();
+        List<Thread> threads = new ArrayList<>();
         for (long n = START; n < END; n++) {
             Thread thread = new Thread(new RunnableA(n));
             thread.start();
@@ -157,20 +162,37 @@ public class Main {
         }
     }
 
+    public static void multiThreaded2() {
+        List<Thread> threads = new ArrayList<>();
+        long subsequence = (END - START) / CORES;
+        for ( long n = START; n < END; n = n+subsequence) {
+            Thread thread = new Thread(new RunnableB(n, n+subsequence));
+            thread.start();
+            threads.add(thread);
+        }
+        for(Thread thread: threads) {
+            try {
+                thread.join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
     public static void threadPool() {
-        ExecutorService es = Executors.newFixedThreadPool(CORES);
+        ExecutorService executorService = Executors.newFixedThreadPool(CORES);
         ArrayList<Future<Integer>> futures = new ArrayList<>();
 
         for ( long n = START; n < END; n++ ) {
             final long number = n;
-            Future<Integer> feval = es.submit (
+            Future<Integer> future = executorService.submit (
                     () ->
                     {
-                        if ( Calculator.isPrimeNumber(number) ) return 1;
+                        if ( Calculator.isMersennePrime(number) ) return 1;
                         return 0;
                     }
             );
-            futures.add(feval);
+            futures.add(future);
         }
 
         int primeCount = 0;
@@ -184,7 +206,7 @@ public class Main {
             }
         }
 
-        es.shutdown();
+        executorService.shutdown();
 
     }
 

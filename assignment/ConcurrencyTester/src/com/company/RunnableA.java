@@ -7,7 +7,7 @@ public class RunnableA implements Runnable {
         this.number = number;
     }
     public void run() {
-        if(Calculator.isPrimeNumber(number)) {
+        if(Calculator.isMersennePrime(number)) {
             primeCount++;
         }
     }
