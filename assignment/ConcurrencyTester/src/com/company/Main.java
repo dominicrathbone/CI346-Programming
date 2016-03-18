@@ -186,8 +186,7 @@ public class Main {
         for ( long n = START; n < END; n++ ) {
             final long number = n;
             Future<Integer> future = executorService.submit (
-                    () ->
-                    {
+                    () -> {
                         if ( Calculator.isMersennePrime(number) ) return 1;
                         return 0;
                     }
@@ -197,17 +196,13 @@ public class Main {
 
         int primeCount = 0;
         for (Future<Integer> future : futures) {
-            try
-            {
+            try {
                 primeCount += future.get();
-            } catch (Exception e)
-            {
+            } catch (Exception e) {
                 System.err.println("Should not happen");
             }
         }
-
         executorService.shutdown();
-
     }
 
 }

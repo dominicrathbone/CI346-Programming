@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.10.27)  18 MAR 2016 14:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.10.27)  18 MAR 2016 19:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -240,27 +240,19 @@ Appendix I.
 Appendix J.
 [15
 
-]
-Appendix K.
-[16
-
-]
-Appendix L.
-[17
-
 ] (./A comparison of C++ and Java.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 2285 strings out of 493054
- 32460 string characters out of 6138326
- 123437 words of memory out of 5000000
- 5833 multiletter control sequences out of 15000+600000
+ 2341 strings out of 493054
+ 33198 string characters out of 6138326
+ 127437 words of memory out of 5000000
+ 5889 multiletter control sequences out of 15000+600000
  9146 words of font info for 32 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 34i,6n,60p,1179b,1274s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 34i,6n,60p,1194b,1274s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/tex
 live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2015
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2015/texmf-dis
@@ -268,10 +260,10 @@ t/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2015/texmf-dist/fonts/ty
 pe1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2015/texmf-dist/fonts/type1/public
 /amsfonts/cm/cmsy10.pfb><c:/texlive/2015/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmti10.pfb>
-Output written on "A comparison of C++ and Java.pdf" (18 pages, 118881 bytes).
+Output written on "A comparison of C++ and Java.pdf" (16 pages, 120404 bytes).
 PDF statistics:
- 90 PDF objects out of 1000 (max. 8388607)
- 62 compressed objects within 1 object stream
+ 84 PDF objects out of 1000 (max. 8388607)
+ 58 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

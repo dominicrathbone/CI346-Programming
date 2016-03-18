@@ -17,14 +17,14 @@
 Explicit concurrency (or explicit parallelism) is a property of programming languages that give the programmer the ability to control the concurrency of a program by indicating which parts of it should be treated as such. In contrast, implicit concurrency is the inherent property of a programming language that allows it to handle code execution concurrently without the need of a programmer to specify how.
 
 \subsection{Explicit Concurrency}
-An example of explicit concurrency is the concept of Threads in Java. Threads are concurrently executing processes within an application, sharing the same state and memory space. By default, all applications written in Java will have one main thread handling code execution. To make a program execute code concurrently, the programmer must instantiate a new instance of the Thread class which will then run the code asynchronously \cite{Threading}. (see Appendix A). Another way of running code concurrently is by making a class implement the "Runnable" interface.\cite{Threading} This can be considered a more accurate way of representing concurrent programming in Java because all it does is specify the task that should be run by a Thread. In contrast, extending the "Thread" object is less accurate as the extension of the class implies it's behaviour is being overwriten or added upon which is not the case when you are just giving the thread a task to run. (see Appendix B).
+An example of explicit concurrency is the concept of Threads in Java. Threads are concurrently executing processes within an application, sharing the same state and memory space. By default, all applications written in Java will have one main thread handling code execution. To make a program execute code concurrently, the programmer must instantiate a new instance of the Thread class which will then run the code asynchronously \cite{Threading}. (see Appendix A). Another way of running code concurrently is by making a class implement the "Runnable" interface.\cite{Threading} This can be considered a more accurate way of representing concurrent programming in Java because all it does is specify the task that should be run by a Thread. In contrast, extending the "Thread" object is less accurate as the extension of the class implies it's behaviour is being overwritten or added upon which is not the case when you are just giving the thread a task to run. (see Appendix B).
 
 \subsubsection{Thread Pooling \& Executors}
-As you can imagine, organising threads can become quite complicated as an application scales. To manage the creation, maintainance and destruction of threads, "thread pooling" can be used. This is a design pattern where a finite group or "pool" of threads is created, normally in the form of a queue. These threads sit idle until they are pulled from the queue to complete a task. Once this is done, they are pushed back into the queue. This has the benefit of avoiding having a thread for each task in an application which can severely hinder performance if they aren't managed correctly. The number of threads in this pool normally varies from application to application due to the fact it could cause bottlenecking if it is too high or low. In Java, thread pools can be implemented by using Executors, more specifically via an interface called "ExecutorService". This is implemented by several concrete classes representing several types of thread pools. The simplest of these implementations is "FixedThreadPool". Once this has been instantiated, "Runnable" objects can be submitted to it as a task to be ran by one of the threads in the pool.\cite{Thread Pools}. (see Appendix C).
+As you can imagine, organising threads can become quite complicated as an application scales. To manage the creation, maintenance and destruction of threads, thread-pooling can be used. This is a design pattern where a finite group of threads is created, normally in the form of a queue. These threads sit idle until they are pulled from the queue to complete a task. Once this is done, they are pushed back into the queue. This has the benefit of avoiding having a thread for each task in an application which can severely hinder performance if they aren't managed correctly. The number of threads in this pool normally varies from application to application due to the fact it could cause bottlenecking if it is too high or low. In Java, thread pools can be implemented by using Executors, more specifically via an interface called "ExecutorService". This is implemented by several concrete classes representing several types of thread pools. The simplest of these implementations is "FixedThreadPool". Once this has been instantiated, "Runnable" objects can be submitted to it as a task to be ran by one of the threads in the pool.\cite{Thread Pools}. (see Appendix C).
 
 \subsection{Implicit Concurrency}
 
-In Java 8, the concept of implicit concurrency was introduced through the Stream API. This allows developers to work on data in parellel by converting data structures specified in the Java Collections library to "Streams". A stream is a sequence of data that operations can be applied to as it travels through. As the streaming data is inputted into each intermediary operation, this then outputs the data into another stream which is piped into the next and so forth until it hits the last operation which terminates, forming a "pipeline". \cite{Stream API}. (See Appendix D). These intermediary operations can be executed concurrently by using a parallel stream or by calling the "parallel()" intemediary operation on a default stream. This works by forking the stream into substreams on which each operation is applied in parallel, these substreams are then joined together at the terminating operation. The order that the intermediary operations are applied to each element is organised by the Java runtime.\cite{Stream API}. (see Appendix E).
+In Java 8, the concept of implicit concurrency was introduced through the Stream API. This allows developers to work on data in parallel by converting data structures specified in the Java Collections library to "Streams". A stream is a sequence of data that operations can be applied to as it travels through. As the streaming data is inputted into each intermediary operation, this then outputs the data into another stream which is piped into the next and so forth until it hits the last operation which terminates, forming a pipeline. \cite{Stream API}. (See Appendix D). These intermediary operations can be executed concurrently by using a parallel stream or by calling the "parallel()" intermediary operation on a default stream. This works by forking the stream into sub-streams on which each operation is applied in parallel, these sub-streams are then joined together at the terminating operation. The order that the intermediary operations are applied to each element is organised by the Java runtime.\cite{Stream API}. (see Appendix E).
 
 \subsection{Issues In Concurrency}
 
@@ -41,7 +41,7 @@ This is when a resource's value become non-deterministic due to multiple threads
 	\item Thread B reads Counter expecting it to be 4.	
 \end{enumerate}
 
-Java multithreading solves this issue with Synchronization. This is where multiple threads working on an individual resource are organized so that only one of them has access to it at a given point in time. This is handled by "monitors", each java object has a "monitor" associated with it that can be locked or unlocked. When a thread wants to access this object, it does so by locking it with this monitor, stopping any other threads from accessing it. To implement this, synchronized methods and blocks are used. The former is used to apply synchronization to the whole scope of a method whereas the latter only applies the synchronization to the block of code within it. \cite{Synchronization}. (See Appendix F).
+Java multi-threading solves this issue with Synchronization. This is where multiple threads working on an individual resource are organized so that only one of them has access to it at a given point in time. This is handled by "monitors", each Java object has a monitor associated with it that can be locked or unlocked. When a thread wants to access this object, it does so by locking it with this monitor, stopping any other threads from accessing it. To implement this, synchronized methods and blocks are used. The former is used to apply synchronization to the whole scope of a method whereas the latter only applies the synchronization to the block of code within it. \cite{Synchronization}. (See Appendix F).
 
 With parallel streaming in Java, the library controls and optimises how the stream is broken down into sub-streams and processed, meaning thread interference does not occur unless an operation is applied to the source collection as the pipe line is being applied to the stream, in which case a "ConcurrentModificationException" is thrown.\cite{Streaming Fork Join}
 
@@ -175,9 +175,6 @@ public class SynchronizedStudent {
 		this.name = name;
 	}
 	
-	public synchronized String getName() {
-		return name;
-	}
 }
 \end{lstlisting}
 \end{figure}
@@ -192,12 +189,6 @@ public class SynchronizedStudent {
 	public void setName(String name) {
 		synchronized(this) {
 			this.name = name;
-		}
-	}
-
-	public String getName() {
-		synchronized(this) {
-			return this.name;
 		}
 	}
 }

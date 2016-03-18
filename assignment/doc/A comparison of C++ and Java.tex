@@ -23,9 +23,9 @@ On the other hand, Java was produced at Sun Microsystems (Now, Oracle) in secret
 As mentioned above, both C++ and Java are languages that support the object oriented paradigm. This concept describes how a system can be modelled as structures known as "objects" that contain the data that describe them as well as the operations that manipulate and use this data. This is based on the imperative programming paradigm, where a language has the ability to control the flow and state of a system. \cite{Paradigms}
 
 \section{Typing}
-Java is considered statically typed as the code is checked for type errors at compilation time. This is in contrast to dynamic typing where type-checking happens at runtime and so errors will only occur if the code containing them is executed. It can also be considered strongly typed (relative to other languages) as it has a safe type-system where a variable declared as one type cannot be initialised or changed to be another type. For example, if a new variable is initialised as an integer and then a string is added to it (see Appendix A), the compiler will throw an error as the types are mismatched. Whilst static and strong typing restricts what a programmer can do with a variable, it has the obvious benefit of preventing potentially serious errors from occurring.\cite{TypingJava}	
+Java is considered statically typed as the code is checked for type errors at compilation time. This is in contrast to dynamic typing where type-checking happens at runtime and so errors will only occur if the code containing them is executed. It can also be considered strongly typed (relative to other languages) as it has a safe type-system where a variable declared as one type cannot be initialised or changed to be another type. For example, if a new variable is initialised as an integer and then a string is added to it (see Appendix A), the compiler will throw an error as the types are mismatched. Whilst static and strong typing restricts what a programmer can do with a variable, it has the obvious benefit of preventing potentially serious errors from occurring.\cite{Typing}	
 
-Although C++ is mostly statically typed, it can also be said to be weakly typed as types can be be implicitly converted from one to another through a variety of means. For example, a short can be implicitly cast to an integer because they are both of numerical types (see Appendix B). It also allows implicit casting of any type pointers to a void pointer (one which contains no type information). However, in contrast to it's predecessor C, it doesn't allow conversion from void pointers to a type pointer without an explicit cast (see Appendix B). This is an example of how it could be argued that C++ is strongly typed (in comparison to C). \cite{TypingC++}
+Although C++ is mostly statically typed, it can also be said to be weakly typed as types can be be implicitly converted from one to another through a variety of means. For example, a short can be implicitly cast to an integer because they are both of numerical types (see Appendix B). It also allows implicit casting of any type pointers to a void pointer (one which contains no type information). However, in contrast to it's predecessor C, it doesn't allow conversion from void pointers to a type pointer without an explicit cast (see Appendix B). This is an example of how it could be argued that C++ is strongly typed (in comparison to C). \cite{Typing}
 
 Both languages contain the notion of primitive types which are basic, predefined types such as integers or booleans which have the purpose of acting as building blocks within the language.
 
@@ -43,29 +43,29 @@ Java can be considered memory-safe as you can not directly control how this memo
 On the other hand, in C++, memory isn't handled by a virtual machine. The task of allocating the addresses at which a variable's value should be held is handled by the operating system. In C++, managing the object's creation and deletion to and from dynamic memory is a manual task which is achieved by the new and delete operators (see Appendix E). However, in a big system, this can be a laborious task to do manually and if done incorrectly, it can result in memory/resource leaks. To counter this, there are techniques such as smart pointers that wrap raw pointers and handle the creation and deletion automatically. \cite{Smart Pointers} Another technique is explicit garbage collection, although C++ lacks this implicitly, it can be implemented via libraries such as the "Boehm collector" library. \cite{Boehm}. 
 
 \section{Compilation}
-With Java, compilation is handled by a compiler called javac. This converts the raw Java source code to byte code, a series of instructions contained within a class file that are then interpreted by the JVM and compiled to native machine code at runtime (this is called Just-In-Time compilation). However, dependent on implementation of the JVM, Java code can be interpreted or compiled in many ways. The key advantage and purpose of the JVM is that it means Java can be ran on any machine as it doesn't use a platform-dependent compiler. \cite{CompilationJava}
+With Java, compilation is handled by a compiler called javac. This converts the raw Java source code to byte code, a series of instructions contained within a class file that are then interpreted by the JVM and compiled to native machine code at runtime (this is called Just-In-Time compilation). However, dependent on implementation of the JVM, Java code can be interpreted or compiled in many ways. The key advantage and purpose of the JVM is that it means Java can be ran on any machine as it doesn't use a platform-dependent compiler. \cite{Compilation}
 
-C++ differs in this sense as it uses platform-dependent compilers so if code is written that uses a library specific to mac, it would compile for mac it most likely wouldn't on a windows machine. Although it lacks cross platform functionality, this means the machines don't have the overhead of running the JVM, making them inherently more performant. It also gives more freedom to the developer as they are closer to the machine	and thus can optimise resource/memory usage more accurately. The process of compilation for C++ can be broken down into 4 steps, preprocessing, compilation, assembly and linking. Preprocessing is the step where directives such as "\#include" are extracted from each C++ file and handled, leaving behind plain C++. The compilation process takes this output and parses it into an assembler file which the assembler takes and creates an object file with. The linking step takes these object files and links them together to produce an executable file. \cite{CompilationC++}
+C++ differs in this sense as it uses platform-dependent compilers so if code is written that uses a library specific to mac, it would compile for mac it most likely wouldn't on a windows machine. Although it lacks cross platform functionality, this means the machines don't have the overhead of running the JVM, making them inherently more performant. It also gives more freedom to the developer as they are closer to the machine	and thus can optimise resource/memory usage more accurately. The process of compilation for C++ can be broken down into 4 steps, preprocessing, compilation, assembly and linking. Preprocessing is the step where directives such as "\#include" are extracted from each C++ file and handled, leaving behind plain C++. The compilation process takes this output and parses it into an assembler file which the assembler takes and creates an object file with. The linking step takes these object files and links them together to produce an executable file. \cite{Compilation}
 
 \section{Concurrency}
 Concurrency can be explained via into the concept of multi-threading. A Thread represent a series of tasks that need to be executed and thus multiple threads represents multiple series of tasks that can be executed.  Of course, this can cause problems as threads share resources such as data which becomes non-deterministic in a multi-threaded environment as it can never be guaranteed to be the same value for every thread, these are called race conditions.
 
-By default, a program written in Java will use a single "main" thread and all tasks will be executed from this thread. However, a developer can create and delete new threads from this "main" thread in order to run multiple series of tasks in parallels (see Appendix F, Figure 1). This is where the race condition used as an example earlier occurs. This can be solved in Java with thread synchronization. Synchronization uses monitors associated with objects to lock and unlock access to parts of that object. Only one thread can hold this monitor at a time so only it can change the data inside this part. Synchronization can take form of a synchronized code block or a synchronized method (See Appendix F, Figure 2).\cite{ConcurrencyJava}
+By default, a program written in Java will use a single "main" thread and all tasks will be executed from this thread. However, a developer can create and delete new threads from this "main" thread in order to run multiple series of tasks in parallels (see Appendix F, Figure 1). This is where the race condition used as an example earlier occurs. This can be solved in Java with thread synchronization. Synchronization uses monitors associated with objects to lock and unlock access to parts of that object. Only one thread can hold this monitor at a time so only it can change the data inside this part. Synchronization can take form of a synchronized method (See Appendix F, Figure 2) or a synchronized code block (See Appendix F, Figure 3).\cite{ConcurrencyJava}
 
 C++ is similar to Java in how threads are created and deleted. To solve the race condition that comes from with resource sharing in a multi threaded environment, C++ uses a "mutex" (mutual exclusion) object containing a lock and unlock function. The lock function is called at the beginning of the block of code that only should be ran in one thread and the unlock function is called at the end, preventing multiple threads from accessing it at the same time (see Appendix G).\cite{ConcurrencyC++}
 
 In both languages, it is also possible to use promises and futures with asynchronous tasks to avoid having to explicitly create threads. In Java, this is achieved by creating an executor service and then submitting the task that needs to be ran asynchronously to the executor. The result of the submit method is called a "future" which you then call a method from to retrieve the result (see Appendix H). In C++, this is achieved by using the "async" construct, the reference value of the function that is to be ran is passed through to it along with with the arguments that are to be used with the function. The result of "async" is a future which can be used to retrieve the result from at any time (see Appendix I).
 
-In Java, it is possible to set the priority the threads have. This indicates how much computation time the threads get from the CPU. In Java, this is simply done by calling the "setPriority" method on the Thread object and the higher the number, the higher the priority (see Appendix J). Although C++ is closer to the machine, it is not possible to set thread priority with the standard library.
+In Java, it is possible to set the priority the threads have. This indicates how much computation time the threads get from the CPU. In Java, this is simply done by calling the "setPriority" method on the Thread object and the higher the number, the higher the priority (see Appendix F, figure 1). Although C++ is closer to the machine, it is not possible to set thread priority with the standard library.
 
 \section{Error Handling}
-Error handling in Java is handled with exceptions (short for "exception events"). These are events that disrupt how the program would normally work. There are two types of exceptions, checked and unchecked exceptions. Checked exceptions are exceptions that have to be caught by a method somewhere and are detected at compilation time. An example of this is FileNotFoundException. This can be detected at compile time if the file is not there and has to be dealt with before the program works. Unchecked exceptions are exceptions that unchecked at compile time as they occur at runtime. An example of this is ArrayIndexOutOfBoundsException as it is unchecked because it cannot be detected at compile time. It is optional to catch these exceptions but if they are not caught anywhere, they will bubble up the runtime stack and eventually cause the program to stop executing. To catch these exceptions, you can either throw the exception and rely on the code catching it somewhere else in the stack or you can use a try/catch block to wrap the block of code that might cause an exception (see Appendix K).\cite{ExceptionsJava}
+Error handling in Java is handled with exceptions (short for "exception events"). These are events that disrupt how the program would normally work. There are two types of exceptions, checked and unchecked exceptions. Checked exceptions are exceptions that have to be caught by a method somewhere and are detected at compilation time. An example of this is FileNotFoundException. This can be detected at compile time if the file is not there and has to be dealt with before the program works. Unchecked exceptions are exceptions that unchecked at compile time as they occur at runtime. An example of this is ArrayIndexOutOfBoundsException as it is unchecked because it cannot be detected at compile time. It is optional to catch these exceptions but if they are not caught anywhere, they will bubble up the runtime stack and eventually cause the program to stop executing. To catch these exceptions, you can either throw the exception and rely on the code catching it somewhere else in the stack or you can use a try/catch block to wrap the block of code that might cause an exception (see Appendix H for an example).\cite{ExceptionsJava}
 
 Modern C++ also uses exceptions to handle errors but it doesn't have the notion of a checked exception. All exceptions are unchecked and are optionally caught (see Appendix L). This can be considered detrimental as exceptions only occur at runtime and so may never occur until it is too late. The syntax for throwing, trying and catching these exceptions is similar to Java.\cite{ExceptionsC++}
 
 \section{Reflection}
 
-It is hard to compare programming languages because they all fit their own niches and purposes. Both Java and C++ can be considered "general-purpose" languages but they are definitely optimised for different purposes. 
+It is hard to compare programming languages because they all fit their own niches and purposes. Both Java and C++ can be considered general purpose languages but they are definitely optimised for different purposes. 
 
 C++ is closer to the system due to the lack of a VM which gives it less of an overhead to run and thus can be more performant with, for example, embedded systems which have limited resources to run on. It also allows developers more freedom for optimising how their code works with a system as they can use OS-specific libraries. However, in the modern age with CPUs getting smaller and faster, it is useful to note that this advantage might not be worth the costs associated with it such as the lack of cross-platform compatibility.
 
@@ -73,29 +73,33 @@ I would consider Java more of a general-purpose language because of it's portabl
 
 \begin{thebibliography}{20}
 	\bibitem{HistoryC++}
-	www.cplusplus.com/info/history/
+"Albatross.". (N/A). History of C++. Available: www.cplusplus.com/info/history/. Last accessed 16/03/2016.
 	\bibitem{HistoryJava}
-	https://www.santarosa.edu/\textasciitilde{}dpearson/mirrored\_pages/java.sun.com/Java\_Technology\_-\_An\_early\_history.pdf
+Jon Byous. (2003). JAVA TECHNOLOGY: AN EARLY HISTOY. Available: https://www.santarosa.edu/\textasciitilde{}dpearson/mirrored\_pages/java.sun.com/Java\_Technology\_-\_An\_early\_history.pdf. Last accessed 16/03/2016.
 	\bibitem{Paradigms}
-	\bibitem{TypingJava}
-	\bibitem{TypingC++}	
+A. Bellaachia. (N/A). Object-Oriented Paradigm. Available: https://www.seas.gwu.edu/~bell/csci210/lectures/oop.pdf. Last accessed 16/03/2016.
+	\bibitem{Typing}
+Premshree Pillai. (2004). Introduction to Static and Dynamic Typing. Available: http://www.sitepoint.com/typing-versus-dynamic-typing/. Last accessed 16/03/2016.
 	\bibitem{ParametersJava}
-	http://www.yoda.arachsys.com/java/passing.html
+N/A. (N/A). Parameter passing in Java - by reference or by value?. Available: http://www.yoda.arachsys.com/java/passing.html. Last accessed 16/03/2016.
 	\bibitem{ParametersC++}
-	http://www.learncpp.com/cpp-tutorial/73-passing-arguments-by-reference/
+"ALEX". (2007). Passing arguments by reference. Available: http://www.learncpp.com/cpp-tutorial/73-passing-arguments-by-reference/. Last accessed 16/03/2016.
 	\bibitem{MemoryJava}
-	http://www.dynatrace.com/en/javabook/how-garbage-collection-works.html
-	\bibitem{MemoryC++}
+N/A. (N/A). How Garbage Collection Really Works. Available: http://www.dynatrace.com/en/javabook/how-garbage-collection-works.html. Last accessed 16/03/2016.
+	\bibitem{Smart Pointers}
+Andrei Milea. (N/A). Common Memory Management Problems in C++. Available: http://www.cprogramming.com/tutorial/c++_memory_problems.html. Last accessed 16/03/2016.
 	\bibitem{Boehm}
-	http://hboehm.info/gc/
-	\bibitem{CompilationJava}
-	http://althing.cs.dartmouth.edu/local/www.acm.uiuc.edu/sigmil/RevEng/ch02.html\#id2558687
-	\bibitem{CompilationC++}
-	http://faculty.cs.niu.edu/~mcmahon/CS241/Notes/compile.html
+N/A. (N/A). A garbage collector for C and C++. Available: http://hboehm.info/gc/. Last accessed 16/03/2016.
+	\bibitem{Compilation}
+N/A. (2004). The Compilation Process. Available: http://althing.cs.dartmouth.edu/local/www.acm.uiuc.edu/sigmil/RevEng/ch02.html#id2558687. Last accessed 16/03/2016.
 	\bibitem{ConcurrencyJava}
+N/A. (N/A). Lesson: Concurrency. Available: https://docs.oracle.com/javase/tutorial/essential/concurrency/. Last accessed 16/03/2016.
 	\bibitem{ConcurrencyC++}
+N/A. (N/A). Concurrency in C++11. Available: https://www.classes.cs.uchicago.edu/archive/2013/spring/12300-1/labs/lab6/. Last accessed 16/03/2016.
 	\bibitem{ExceptionsJava}
+N/A. (N/A). Lesson: Exceptions. Available: https://docs.oracle.com/javase/tutorial/essential/exceptions/. Last accessed 16/03/2016.
 	\bibitem{ExceptionsC++}
+N/A. (N/A). Exceptions. Available: http://www.cplusplus.com/doc/tutorial/exceptions/. Last accessed 16/03/2016.
 \end{thebibliography}
 
 \appendix
@@ -192,19 +196,48 @@ delete [] boolArray;
 \begin{figure}[h!]
 	\caption{Multi-threading in Java}
 	\begin{lstlisting}[language=Java,frame=single]
+Thread thread = new Thread(new RunnableA(n));
+thread.setPriority(Thread.MAX_PRIORITY);
+thread.start();
+	\end{lstlisting}
 
-	\end{lstlisting}
-	\caption{Synchronization in Java}
+	\caption{Synchronized Method in Java}
 	\begin{lstlisting}[language=Java,frame=single]
-	
+public class SynchronizedStudent {
+
+	private String name = "Dom";
+
+	public synchronized void setName(String name) {
+		this.name = name;
+	}
+}
 	\end{lstlisting}
+	\caption{Synchronized Block in Java}
+\begin{lstlisting}[language=Java,frame=single]
+public class SynchronizedStudent {
+
+	private String name = "Dom";
+	
+	public void setName(String name) {
+		synchronized(this) {
+			this.name = name;
+		}
+	}
+}
+\end{lstlisting}
 \end{figure}
 
 \chapter{}
 \begin{figure}[h!]
 	\caption{Mutex in C++}
-	\begin{lstlisting}[language=C++,frame=single]
-
+	\begin{lstlisting}[language=C++,frame=single]	
+		string name = "Dom";
+		
+		void setName(string str) {
+			m.lock();
+			name = str;
+			m.unlock();
+		}
 	\end{lstlisting}
 \end{figure}
 
@@ -212,7 +245,16 @@ delete [] boolArray;
 \begin{figure}[h!]
 	\caption{Futures in Java}
 	\begin{lstlisting}[language=Java,frame=single]
+ExecutorService executorService =
+Executors.newFixedThreadPool(4);
 
+Future future = executorService.submit(new CallableA());
+
+try {
+	Integer result = future.get();
+} catch (Exception e) {
+	e.printStackTrace();
+}	
 	\end{lstlisting}
 \end{figure}
 
@@ -220,32 +262,35 @@ delete [] boolArray;
 \begin{figure}[h!]
 	\caption{Async Construct in C++}
 	\begin{lstlisting}[language=C++,frame=single]
-
+int i = 1;
+int j = 100;
+int add (int x) {
+	i = i + x;
+	return i;
+}
+std::future<int> future(std::async(add(100)));
+int result = future.get();
 	\end{lstlisting}
 \end{figure}
-
-\chapter{}
-\begin{figure}[h!]
-	\caption{Thread priority in Java}
-	\begin{lstlisting}[language=Java,frame=single]
-	
-	\end{lstlisting}
-\end{figure}
-
-\chapter{}
-\begin{figure}[h!]
-	\caption{Error Handling in Java}
-	\begin{lstlisting}[language=Java,frame=single]
-	
-	\end{lstlisting}
-\end{figure}
-
 
 \chapter{}
 \begin{figure}[h!]
 	\caption{Error Handling in C++}
 	\begin{lstlisting}[language=C++,frame=single]
-	
+	int i = 1;
+	int add(int x) {
+		i = i + x;
+		if(i < 0) {
+			throw "i LESS THAN 0";
+		}
+		return i;
+	}
+	try {
+		int x = int(-5);
+		cout << x << endl;
+	} catch (const char* msg) {
+		cerr << msg << endl;
+	}
 	\end{lstlisting}
 \end{figure}
 \end{document}          
