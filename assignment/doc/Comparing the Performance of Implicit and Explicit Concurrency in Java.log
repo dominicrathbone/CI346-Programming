@@ -1,15 +1,16 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.10.27)  6 MAR 2016 15:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.10.27)  17 MAR 2016 16:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**"Comparing the Performance of Implicit and Explicit Concurrency in Java.tex"
+**"./Comparing the Performance of Implicit and Explicit Concurrency in Java.tex
+"
 (./Comparing the Performance of Implicit and Explicit Concurrency in Java.tex
-LaTeX2e <2011/06/27>
-Babel <3.9k> and hyphenation patterns for 2 languages loaded.
-(/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
-Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
-(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
-File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+LaTeX2e <2015/10/01> patch level 1
+Babel <3.9m> and hyphenation patterns for 79 languages loaded.
+(c:/texlive/2015/texmf-dist/tex/latex/base/report.cls
+Document Class: report 2014/09/29 v1.4h Standard LaTeX document class
+(c:/texlive/2015/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
 \c@chapter=\count80
@@ -24,9 +25,9 @@ File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+(c:/texlive/2015/texmf-dist/tex/latex/listings/listings.sty
+(c:/texlive/2015/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks14
 )
 \lst@mode=\count88
@@ -42,16 +43,16 @@ Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \lst@lineno=\count93
 \lst@maxwidth=\dimen106
 
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
-File: lstmisc.sty 2014/03/04 1.5c (Carsten Heinz)
+(c:/texlive/2015/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
 \c@lstnumber=\count94
 \lst@skipnumbers=\count95
 \lst@framebox=\box27
 )
-(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
-File: listings.cfg 2014/03/04 1.5c listings configuration
+(c:/texlive/2015/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2015/06/04 1.6 listings configuration
 ))
-Package: listings 2014/03/04 1.5c (Carsten Heinz)
+Package: listings 2015/06/04 1.6 (Carsten Heinz)
 
 (./Comparing the Performance of Implicit and Explicit Concurrency in Java.aux)
 \openout1 = `"Comparing the Performance of Implicit and Explicit Concurrency in
@@ -79,23 +80,22 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 [1
 
-{/usr/share/texlive/texmf-dist/fonts/map/pdftex/updmap/pdftex.map}] [1]
-[2]
+{c:/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [1] [2]
 Appendix A.
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2014/03/04 1.5c listings language file
+(c:/texlive/2015/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 49.
 
-(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+(c:/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 49.
 LaTeX Font Info:    Try loading font information for OML+cmr on input line 50.
 
-(/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
-File: omlcmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+(c:/texlive/2015/texmf-dist/tex/latex/base/omlcmr.fd
+File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 50.
@@ -129,22 +129,22 @@ Appendix F.
 (./Comparing the Performance of Implicit and Explicit Concurrency in Java.aux) 
 ) 
 Here is how much of TeX's memory you used:
- 1638 strings out of 495025
- 23526 string characters out of 6181514
- 99829 words of memory out of 5000000
- 4900 multiletter control sequences out of 15000+600000
+ 1638 strings out of 493054
+ 23475 string characters out of 6138326
+ 105846 words of memory out of 5000000
+ 5209 multiletter control sequences out of 15000+600000
  8808 words of font info for 31 fonts, out of 8000000 for 9000
- 14 hyphenation exceptions out of 8191
- 27i,6n,42p,1292b,1324s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmsy10.pfb>
+ 1141 hyphenation exceptions out of 8191
+ 27i,6n,42p,1294b,1324s stack positions out of 5000i,500n,10000p,200000b,80000s
+<c:/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texl
+ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2015/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2015/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2015/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2015/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr17.pfb><c:/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmsy10.pfb>
 Output written on "Comparing the Performance of Implicit and Explicit Concurren
-cy in Java.pdf" (9 pages, 96732 bytes).
+cy in Java.pdf" (9 pages, 96873 bytes).
 PDF statistics:
  62 PDF objects out of 1000 (max. 8388607)
  43 compressed objects within 1 object stream

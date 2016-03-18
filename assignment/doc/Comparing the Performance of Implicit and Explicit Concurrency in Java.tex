@@ -11,20 +11,19 @@
 \maketitle
 
 \section*{Introduction}
-In order to compare the effects of concurrency in Java on performance, A test program was created that compared various implementations of concurrency, implicit and explicit, to two baseline non-concurrent implementations. These implementations performed a number of mathematical operations on a set of integers derived from the user inputting a start and end integer at launch. These operations consisted of finding all the prime numbers in the set, finding all the factors of the end integer in the set, finding all the mersenne numbers in the set and finding all the perfect numbers in the set. Within this program, time recorded in nano seconds was used as a benchmark in order to compare these implementations to each other. Although there are other variables that could be used in conjunction that may give a more detailed result, time will give us clear and simple results to draw conclusions from. The time was taken before and after each implementation ran over the set and then each total run time was derived from them. In order to compare them easily, a ratio derived from dividing the total time of the baseline implementation by the total time of concurrent implementation is outputted to csv files.
+In order to compare the effects of concurrency in Java on performance, A test program was created that compared various implementations of concurrency, implicit and explicit, to two baseline non-concurrent implementations. These implementations performed a mathematical operations on a set of integers derived from the user inputting a start and end number at launch. This operation consisted of finding all the mersenne primes in the set. Within this program, time recorded in nano seconds was used as a benchmark in order to compare these implementations to each other. Although there are other variables that could be used in conjunction that may give a more detailed result, using time gives clear and simple results to draw conclusions from. The time was taken before and after each implementation ran over the set and then the total run time was derived from them. In order to compare them with ease, a ratio derived from dividing the total time of the baseline implementation by the total time of concurrent implementation is outputted to csv files. To run the programs, I am using a ThinkPad laptop running Fedora with a quad-core 2.50GHz i5-2520M CPU and 8 gigabytes of RAM. as well as a Gaming PC running Windows 7 with a quad-core 3.50GHz i5 4690K and 8 gigabytes of RAM.
 
-To run the programs, I am using a ThinkPad laptop running Fedora with a quad-core 2.50GHz i5-2520M CPU and 8 gigabytes of RAM. as well as a Gaming PC running Windows 7 with a quad-core 3.50GHz i5 4690K and 8 gigabytes of RAM.
 \section{Non-concurrent Approach}
-The non-concurrent approach runs the operations sequentially, incrementing a counter every time the operation is successful. This is used as a baseline to compare the explicit concurrent approaches to.
+The non-concurrent approach runs the operations sequentially, running over the sequence of integers with a for statement and incrementing a counter every time a prime number is found. This is used as the baseline to compare the implicit and explicit concurrent approaches to.
 
 \section{Raw Multithreaded Approach}
-The first explicitly concurrent implementation uses raw threads,  giving each operation a separate thread so they can be executed in parallel.
+The first explicitly concurrent implementation uses raw threads to run the operations over the sequence of numbers. This was attempted in two ways. First of all, to make the test fairer, I produced an implementation that spawned a new thread for every number in the sequence (see appendix A), similar to how a parallel stream would split a stream of numbers into multiple parallel substreams. On testing this implementation, it was revealed that this would not be an efficient way to approach concurrency because  as the sequence of numbers became larger, it would become extremely slow. This was due to the lack of thread management such as a queue or limit to how many threads should be started at once meaning the machine was being flooded with threads. 
 
-\subsection{Performance}
-\subsubsection{Fedora Laptop}
+As a result of this, the implementation was revised and it was decided that the best way to approach this was to split the sequence of numbers down into smaller sequences using the number of cores with one thread for each sequence. This would mean that although each CPU core had to process with a larger sequence of numbers per thread, the number of threads and the overhead associated with them was lower which meant the time was significantly faster.
+
 \subsubsection{Windows 7 PC}
  
-\section{Threadpooled Approach}
+\section{Thread Pooled Approach}
 The second explicitly concurrent implementation
 \subsection{Performance}
 \subsubsection{Fedora Laptop}
@@ -44,65 +43,30 @@ The second explicitly concurrent implementation
 \appendix
 \chapter{}
 \begin{figure}[h!]
-	\caption{NonCurrentRunner.java}
+	\caption{Non-concurrent}
 	\begin{lstlisting}[language=Java,frame=single]
-public void run() {
-	for(int i = start; i <= end; i++) {
-		if(!Calculator.isFactor(i,end)) {
-			factorCount++;
-		}
-		if(!Calculator.isPrimeNumber(i)) {
-			primeCount++;
-		}
-		if(!Calculator.isMersenne(i)) {
-			mersenneCount++;
-		}
-		if(!Calculator.isPerfectNumber(i)) {
-			perfectNumberCount++;
-		}
-	}
-}
+
 	\end{lstlisting}
 \end{figure}
 
 \chapter{}
 \begin{figure}[h!]
-	\caption{RawMultithreadedRunner.java}
+	\caption{Multi-threaded 1}
 	\begin{lstlisting}[language=Java,frame=single]
-public void run() {
-	Thread threadA = 
-		new Thread(new ThreadA(start, end));
-	Thread threadB = 
-		new Thread(new ThreadB(start, end));
-	Thread threadC = 
-		new Thread(new ThreadC(start, end));
-	Thread threadD = 
-		new Thread(new ThreadD(start, end));
-	threadA.run();
-	threadB.run();
-	threadC.run();
-	threadD.run();
-}
+
+	\end{lstlisting}
+\end{figure}
+
+\begin{figure}[h!]
+	\caption{Multi-threaded 2}
+	\begin{lstlisting}[language=Java,frame=single]
+
 	\end{lstlisting}
 \end{figure}
 
 \chapter{}
 \begin{figure}[h!]
-	\caption{ThreadA.java}
-	\begin{lstlisting}[language=Java,frame=single]
-public void run() {
-	for (int i = start; i <= end; i++) {
-		if (!Calculator.isFactor(i, end)) {
-			factorCount++;
-		}
-	}
-}
-	\end{lstlisting}
-\end{figure}
-
-\chapter{}
-\begin{figure}[h!]
-	\caption{ThreadPoolRunner.java}
+	\caption{Thread Pool}
 	\begin{lstlisting}[language=Java,frame=single]
 public void run() {
 	ExecutorService executor =
@@ -120,7 +84,7 @@ public void run() {
 
 \chapter{}
 \begin{figure}[h!]
-	\caption{SerialStreamRunner.java}
+	\caption{Serial Stream}
 	\begin{lstlisting}[language=Java,frame=single]
 public void run() {
 	Stream
@@ -136,7 +100,7 @@ public void run() {
 \end{figure}
 \chapter{}
 \begin{figure}[h!]
-	\caption{SerialStreamRunner.java}
+	\caption{Parallel Stream}
 	\begin{lstlisting}[language=Java,frame=single]
 public void run() {
     Stream
