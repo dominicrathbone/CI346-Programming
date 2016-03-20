@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.10.27)  18 MAR 2016 18:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.10.27)  19 MAR 2016 20:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -109,23 +109,76 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen115
 \Gin@req@width=\dimen116
 )
+(c:/texlive/2015/texmf-dist/tex/latex/pdfpages/pdfpages.sty
+Package: pdfpages 2015/09/18 v0.5d Insert pages of external PDF documents (AM)
+
+(c:/texlive/2015/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(c:/texlive/2015/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count100
+\calc@Bcount=\count101
+\calc@Adimen=\dimen117
+\calc@Bdimen=\dimen118
+\calc@Askip=\skip43
+\calc@Bskip=\skip44
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count102
+\calc@Cskip=\skip45
+)
+(c:/texlive/2015/texmf-dist/tex/latex/eso-pic/eso-pic.sty
+Package: eso-pic 2015/07/21 v2.0g eso-pic (RN)
+
+(c:/texlive/2015/texmf-dist/tex/generic/oberdiek/atbegshi.sty
+Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
+)
+(c:/texlive/2015/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+
+(c:/texlive/2015/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+))
+\AM@pagewidth=\dimen119
+\AM@pageheight=\dimen120
+
+(c:/texlive/2015/texmf-dist/tex/latex/pdfpages/pppdftex.def
+File: pppdftex.def 2015/09/18 v0.5d Pdfpages driver for pdfTeX (AM)
+)
+\AM@pagebox=\box28
+\AM@toc@title=\toks17
+\c@AM@survey=\count103
+\AM@templatesizebox=\box29
+)
 (./Comparing the Performance of Implicit and Explicit Concurrency in Java.aux)
 \openout1 = `"Comparing the Performance of Implicit and Explicit Concurrency in
  Java.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-\c@lstlisting=\count100
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+\c@lstlisting=\count104
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -163,17 +216,17 @@ LaTeX Font Info:    ... okay on input line 12.
 
 (c:/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count101
-\scratchdimen=\dimen117
-\scratchbox=\box28
-\nofMPsegments=\count102
-\nofMParguments=\count103
-\everyMPshowfont=\toks17
-\MPscratchCnt=\count104
-\MPscratchDim=\dimen118
-\MPnumerator=\count105
-\makeMPintoPDFobject=\count106
-\everyMPtoPDFconversion=\toks18
+\scratchcounter=\count105
+\scratchdimen=\dimen121
+\scratchbox=\box30
+\nofMPsegments=\count106
+\nofMParguments=\count107
+\everyMPshowfont=\toks18
+\MPscratchCnt=\count108
+\MPscratchDim=\dimen122
+\MPnumerator=\count109
+\makeMPintoPDFobject=\count110
+\everyMPtoPDFconversion=\toks19
 ) (c:/texlive/2015/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -218,12 +271,22 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
+\AtBeginShipoutBox=\box31
+
+(c:/texlive/2015/texmf-dist/tex/latex/oberdiek/pdflscape.sty
+Package: pdflscape 2008/08/11 v0.10 Display of landscape pages in PDF (HO)
+
+(c:/texlive/2015/texmf-dist/tex/latex/graphics/lscape.sty
+Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 80.
+)
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 13.
+(Font)              <12> on input line 14.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 13.
+(Font)              <8> on input line 14.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 13.
+(Font)              <6> on input line 14.
  [1
 
 {c:/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [1] [2]
@@ -231,28 +294,28 @@ Appendix A.
 (c:/texlive/2015/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 37.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 48.
 
 (c:/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 37.
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 38.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 48.
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 49.
 
 (c:/texlive/2015/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 38.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 49.
  [3
 
 ]
 Appendix B.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 78.
+(Font)              <7> on input line 89.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 78.
+(Font)              <5> on input line 89.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -272,49 +335,205 @@ Appendix E.
 
 ]
 Appendix F.
-<PC_GRAPHS.png, id=38, 644.4075pt x 706.13812pt>
-File: PC_GRAPHS.png Graphic file (type png)
- <use PC_GRAPHS.png>
-Package pdftex.def Info: PC_GRAPHS.png used on input line 167.
-(pdftex.def)             Requested size: 483.30444pt x 529.6023pt.
+<results_4_CORES_PC.pdf, id=38, 597.23125pt x 845.1575pt>
+File: results_4_CORES_PC.pdf Graphic file (type pdf)
 
-Overfull \hbox (49.68443pt too wide) in paragraph at lines 167--168
-[][] 
- []
+<use results_4_CORES_PC.pdf>
+Package pdftex.def Info: results_4_CORES_PC.pdf used on input line 176.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: results_4_CORES_PC.pdf Graphic file (type pdf)
+ <use results_4_CORES_PC.pdf>
+Package pdftex.def Info: results_4_CORES_PC.pdf used on input line 176.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
 
+<results_4_CORES_PC.pdf, id=41, page=1, 597.23125pt x 845.1575pt>
+File: results_4_CORES_PC.pdf Graphic file (type pdf)
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+<use results_4_CORES_PC.pdf, page 1>
+Package pdftex.def Info: results_4_CORES_PC.pdf, page1 used on input line 176.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: results_4_CORES_PC.pdf Graphic file (type pdf)
+ <use results_4_CORES_PC.pdf, page 1>
+Package pdftex.def Info: results_4_CORES_PC.pdf, page1 used on input line 176.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
 
 [9
 
-] [10 <./PC_GRAPHS.png>]
-Appendix G.
-<LAPTOP_GRAPHS.png, id=47, 644.4075pt x 697.8572pt>
-File: LAPTOP_GRAPHS.png Graphic file (type png)
- <use LAPTOP_GRAPHS.png>
-Package pdftex.def Info: LAPTOP_GRAPHS.png used on input line 173.
-(pdftex.def)             Requested size: 483.30444pt x 523.3916pt.
+]
+File: results_4_CORES_PC.pdf Graphic file (type pdf)
+ <use results_4_CORES_PC.pdf, page 1>
+Package pdftex.def Info: results_4_CORES_PC.pdf, page1 used on input line 176.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: results_4_CORES_PC.pdf Graphic file (type pdf)
+ <use results_4_CORES_PC.pdf, page 1>
+Package pdftex.def Info: results_4_CORES_PC.pdf, page1 used on input line 176.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: results_4_CORES_PC.pdf Graphic file (type pdf)
 
-Overfull \hbox (49.68443pt too wide) in paragraph at lines 173--174
+<use results_4_CORES_PC.pdf, page 1>
+Package pdftex.def Info: results_4_CORES_PC.pdf, page1 used on input line 176.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+ [10 <./results_4_CORES_PC.pdf>]
+File: results_4_CORES_PC.pdf Graphic file (type pdf)
+
+<use results_4_CORES_PC.pdf>
+Package pdftex.def Info: results_4_CORES_PC.pdf used on input line 177.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: results_4_CORES_PC.pdf Graphic file (type pdf)
+ <use results_4_CORES_PC.pdf>
+Package pdftex.def Info: results_4_CORES_PC.pdf used on input line 177.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+
+<results_4_CORES_PC.pdf, id=57, page=2, 597.23125pt x 845.1575pt>
+File: results_4_CORES_PC.pdf Graphic file (type pdf)
+
+<use results_4_CORES_PC.pdf, page 2>
+Package pdftex.def Info: results_4_CORES_PC.pdf, page2 used on input line 177.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: results_4_CORES_PC.pdf Graphic file (type pdf)
+ <use results_4_CORES_PC.pdf, page 2>
+Package pdftex.def Info: results_4_CORES_PC.pdf, page2 used on input line 177.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: results_4_CORES_PC.pdf Graphic file (type pdf)
+
+<use results_4_CORES_PC.pdf, page 2>
+Package pdftex.def Info: results_4_CORES_PC.pdf, page2 used on input line 177.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: results_4_CORES_PC.pdf Graphic file (type pdf)
+ <use results_4_CORES_PC.pdf, page 2>
+Package pdftex.def Info: results_4_CORES_PC.pdf, page2 used on input line 177.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: results_4_CORES_PC.pdf Graphic file (type pdf)
+
+<use results_4_CORES_PC.pdf, page 2>
+Package pdftex.def Info: results_4_CORES_PC.pdf, page2 used on input line 177.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+ [11 <./results_4_CORES_PC.pdf>]
+<results_4_CORES_LAPTOP.pdf, id=62, 597.23125pt x 845.1575pt>
+File: results_4_CORES_LAPTOP.pdf Graphic file (type pdf)
+
+<use results_4_CORES_LAPTOP.pdf>
+Package pdftex.def Info: results_4_CORES_LAPTOP.pdf used on input line 178.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: results_4_CORES_LAPTOP.pdf Graphic file (type pdf)
+ <use results_4_CORES_LAPTOP.pdf>
+Package pdftex.def Info: results_4_CORES_LAPTOP.pdf used on input line 178.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+
+<results_4_CORES_LAPTOP.pdf, id=65, page=1, 597.23125pt x 845.1575pt>
+File: results_4_CORES_LAPTOP.pdf Graphic file (type pdf)
+
+<use results_4_CORES_LAPTOP.pdf, page 1>
+Package pdftex.def Info: results_4_CORES_LAPTOP.pdf, page1 used on input line 1
+78.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: results_4_CORES_LAPTOP.pdf Graphic file (type pdf)
+
+<use results_4_CORES_LAPTOP.pdf, page 1>
+Package pdftex.def Info: results_4_CORES_LAPTOP.pdf, page1 used on input line 1
+78.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: results_4_CORES_LAPTOP.pdf Graphic file (type pdf)
+
+<use results_4_CORES_LAPTOP.pdf, page 1>
+Package pdftex.def Info: results_4_CORES_LAPTOP.pdf, page1 used on input line 1
+78.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: results_4_CORES_LAPTOP.pdf Graphic file (type pdf)
+
+<use results_4_CORES_LAPTOP.pdf, page 1>
+Package pdftex.def Info: results_4_CORES_LAPTOP.pdf, page1 used on input line 1
+78.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: results_4_CORES_LAPTOP.pdf Graphic file (type pdf)
+
+<use results_4_CORES_LAPTOP.pdf, page 1>
+Package pdftex.def Info: results_4_CORES_LAPTOP.pdf, page1 used on input line 1
+78.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+ [12 <./results_4_CORES_LAPTOP.pdf>]
+File: results_4_CORES_LAPTOP.pdf Graphic file (type pdf)
+
+<use results_4_CORES_LAPTOP.pdf>
+Package pdftex.def Info: results_4_CORES_LAPTOP.pdf used on input line 179.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: results_4_CORES_LAPTOP.pdf Graphic file (type pdf)
+ <use results_4_CORES_LAPTOP.pdf>
+Package pdftex.def Info: results_4_CORES_LAPTOP.pdf used on input line 179.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+
+<results_4_CORES_LAPTOP.pdf, id=79, page=2, 597.23125pt x 845.1575pt>
+File: results_4_CORES_LAPTOP.pdf Graphic file (type pdf)
+
+<use results_4_CORES_LAPTOP.pdf, page 2>
+Package pdftex.def Info: results_4_CORES_LAPTOP.pdf, page2 used on input line 1
+79.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: results_4_CORES_LAPTOP.pdf Graphic file (type pdf)
+
+<use results_4_CORES_LAPTOP.pdf, page 2>
+Package pdftex.def Info: results_4_CORES_LAPTOP.pdf, page2 used on input line 1
+79.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: results_4_CORES_LAPTOP.pdf Graphic file (type pdf)
+
+<use results_4_CORES_LAPTOP.pdf, page 2>
+Package pdftex.def Info: results_4_CORES_LAPTOP.pdf, page2 used on input line 1
+79.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: results_4_CORES_LAPTOP.pdf Graphic file (type pdf)
+
+<use results_4_CORES_LAPTOP.pdf, page 2>
+Package pdftex.def Info: results_4_CORES_LAPTOP.pdf, page2 used on input line 1
+79.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+File: results_4_CORES_LAPTOP.pdf Graphic file (type pdf)
+
+<use results_4_CORES_LAPTOP.pdf, page 2>
+Package pdftex.def Info: results_4_CORES_LAPTOP.pdf, page2 used on input line 1
+79.
+(pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
+ [13 <./results_4_CORES_LAPTOP.pdf>]
+Appendix G.
+<PC_GRAPHS.png, id=84, 644.4075pt x 706.13812pt>
+File: PC_GRAPHS.png Graphic file (type png)
+ <use PC_GRAPHS.png>
+Package pdftex.def Info: PC_GRAPHS.png used on input line 184.
+(pdftex.def)             Requested size: 483.30444pt x 529.6023pt.
+
+Overfull \hbox (49.68443pt too wide) in paragraph at lines 184--185
 [][] 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[11
+<LAPTOP_GRAPHS.png, id=86, 644.4075pt x 697.8572pt>
+File: LAPTOP_GRAPHS.png Graphic file (type png)
+ <use LAPTOP_GRAPHS.png>
+Package pdftex.def Info: LAPTOP_GRAPHS.png used on input line 189.
+(pdftex.def)             Requested size: 483.30444pt x 523.3916pt.
 
-] [12 <./LAPTOP_GRAPHS.png>]
+Overfull \hbox (49.68443pt too wide) in paragraph at lines 189--190
+[][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[14
+
+] [15 <./PC_GRAPHS.png>] [16 <./LAPTOP_GRAPHS.png>]
 (./Comparing the Performance of Implicit and Explicit Concurrency in Java.aux) 
 ) 
 Here is how much of TeX's memory you used:
- 3361 strings out of 493054
- 48922 string characters out of 6138326
- 157072 words of memory out of 5000000
- 6860 multiletter control sequences out of 15000+600000
+ 4657 strings out of 493054
+ 67843 string characters out of 6138326
+ 183009 words of memory out of 5000000
+ 8118 multiletter control sequences out of 15000+600000
  8501 words of font info for 30 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,6n,42p,1329b,1324s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,18n,43p,1411b,1332s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texl
 ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2015/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2015/texmf-dis
@@ -323,10 +542,10 @@ pe1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2015/texmf-dist/fonts/type1/public
 /amsfonts/cm/cmr17.pfb><c:/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmsy10.pfb>
 Output written on "Comparing the Performance of Implicit and Explicit Concurren
-cy in Java.pdf" (13 pages, 173147 bytes).
+cy in Java.pdf" (17 pages, 225593 bytes).
 PDF statistics:
- 79 PDF objects out of 1000 (max. 8388607)
- 53 compressed objects within 1 object stream
+ 121 PDF objects out of 1000 (max. 8388607)
+ 73 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 81 words of extra memory for PDF output out of 10000 (max. 10000000)
 

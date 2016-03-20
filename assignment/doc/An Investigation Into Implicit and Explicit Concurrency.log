@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.10.27)  14 MAR 2016 16:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.10.27)  19 MAR 2016 20:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -53,57 +53,119 @@ File: listings.cfg 2015/06/04 1.6 listings configuration
 ))
 Package: listings 2015/06/04 1.6 (Carsten Heinz)
 
+(c:/texlive/2015/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2010/09/12 v5.6 Page Geometry
+
+(c:/texlive/2015/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+(c:/texlive/2015/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+(c:/texlive/2015/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count96
+\Gm@cntv=\count97
+\c@Gm@tempcnt=\count98
+\Gm@bindingoffset=\dimen107
+\Gm@wd@mp=\dimen108
+\Gm@odd@mp=\dimen109
+\Gm@even@mp=\dimen110
+\Gm@layoutwidth=\dimen111
+\Gm@layoutheight=\dimen112
+\Gm@layouthoffset=\dimen113
+\Gm@layoutvoffset=\dimen114
+\Gm@dimlist=\toks16
+)
 (c:/texlive/2015/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2005/04/14 v1.61803 publication quality tables
-\heavyrulewidth=\dimen107
-\lightrulewidth=\dimen108
-\cmidrulewidth=\dimen109
-\belowrulesep=\dimen110
-\belowbottomsep=\dimen111
-\aboverulesep=\dimen112
-\abovetopsep=\dimen113
-\cmidrulesep=\dimen114
-\cmidrulekern=\dimen115
-\defaultaddspace=\dimen116
-\@cmidla=\count96
-\@cmidlb=\count97
-\@aboverulesep=\dimen117
-\@belowrulesep=\dimen118
-\@thisruleclass=\count98
-\@lastruleclass=\count99
-\@thisrulewidth=\dimen119
+\heavyrulewidth=\dimen115
+\lightrulewidth=\dimen116
+\cmidrulewidth=\dimen117
+\belowrulesep=\dimen118
+\belowbottomsep=\dimen119
+\aboverulesep=\dimen120
+\abovetopsep=\dimen121
+\cmidrulesep=\dimen122
+\cmidrulekern=\dimen123
+\defaultaddspace=\dimen124
+\@cmidla=\count99
+\@cmidlb=\count100
+\@aboverulesep=\dimen125
+\@belowrulesep=\dimen126
+\@thisruleclass=\count101
+\@lastruleclass=\count102
+\@thisrulewidth=\dimen127
 )
 (c:/texlive/2015/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2011/09/28 v3.5.2 Customized lists
 \labelindent=\skip43
-\enit@outerparindent=\dimen120
-\enit@toks=\toks16
+\enit@outerparindent=\dimen128
+\enit@toks=\toks17
 \enit@inbox=\box28
-\enitdp@description=\count100
+\enitdp@description=\count103
 )
 (./An Investigation Into Implicit and Explicit Concurrency.aux)
 \openout1 = `"An Investigation Into Implicit and Explicit Concurrency.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-\c@lstlisting=\count101
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+\c@lstlisting=\count104
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(90.3375pt, 433.62001pt, 90.3375pt)
+* v-part:(T,H,B)=(90.3375pt, 614.295pt, 90.3375pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=433.62001pt
+* \textheight=614.295pt
+* \oddsidemargin=18.0675pt
+* \evensidemargin=18.0675pt
+* \topmargin=-18.9325pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=65.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 14.
+(Font)              <12> on input line 15.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 14.
+(Font)              <8> on input line 15.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 14.
- [1
+(Font)              <6> on input line 15.
+[1
 
 {c:/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [1]
 
@@ -121,13 +183,13 @@ Appendix A.
 (c:/texlive/2015/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 68.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 67.
 
 (c:/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 68.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 67.
  [4
 
 ]
@@ -140,17 +202,17 @@ Appendix C.
 
 ]
 Appendix D.
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 132.
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 131.
 
 (c:/texlive/2015/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 132.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 131.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 139.
+(Font)              <7> on input line 138.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 139.
+(Font)              <5> on input line 138.
  [7
 
 ]
@@ -159,87 +221,78 @@ Appendix E.
 
 ]
 Appendix F.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
 [9
 
-] [10]
-Overfull \hbox (175.75113pt too wide) in paragraph at lines 209--210
+]
+Overfull \hbox (13.1865pt too wide) in paragraph at lines 199--201
 []\OT1/cmr/m/n/10 N/A. (N/A). Thread-ing. Avail-able: https://docs.oracle.com/j
-avase/tutorial/essential/concurrency/runthread.html.
+avase/tutorial/essential/concurrency
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 211--212
-[]\OT1/cmr/m/n/10 N/A. (N/A). Thread Pools. Avail-able:
+Overfull \hbox (79.26999pt too wide) in paragraph at lines 202--203
+[]\OT1/cmr/m/n/10 N/A. (N/A). Thread Pools. Avail-able: https://docs.oracle.com
+/javase/tutorial/essential/concurrency/pools.html.
  []
 
 
-Underfull \hbox (badness 7468) in paragraph at lines 213--214
-[]\OT1/cmr/m/n/10 Madhusudhan Konda. (2015). Java 8 streams API and par-al-
+Underfull \hbox (badness 10000) in paragraph at lines 204--205
+[]\OT1/cmr/m/n/10 Madhusudhan Konda. (2015). Java 8 streams API and par-al-leli
+sm. Avail-able:
  []
 
 
-Underfull \hbox (badness 2012) in paragraph at lines 213--214
-\OT1/cmr/m/n/10 lelism. Avail-able: http://radar.oreilly.com/2015/02/java-8-str
-eams-api-
+Underfull \hbox (badness 10000) in paragraph at lines 204--205
+\OT1/cmr/m/n/10 http://radar.oreilly.com/2015/02/java-8-streams-api-and-paralle
+lism.html. Last ac-cessed
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 215--216
-[]\OT1/cmr/m/n/10 N/A. (N/A). Thread In-ter-fer-ence. Avail-able:
+Overfull \hbox (53.51984pt too wide) in paragraph at lines 206--208
+[]\OT1/cmr/m/n/10 N/A. (N/A). Thread In-ter-fer-ence. Avail-able: https://docs.
+oracle.com/javase/tutorial/essential/concurrency
  []
 
 
-Overfull \hbox (13.77853pt too wide) in paragraph at lines 215--216
-\OT1/cmr/m/n/10 https://docs.oracle.com/javase/tutorial/essential/concurrency/i
-nterfere.html.
+Overfull \hbox (38.18657pt too wide) in paragraph at lines 209--211
+[]\OT1/cmr/m/n/10 N/A. (N/A). Syn-chro-niza-tion. Avail-able: https://docs.orac
+le.com/javase/tutorial/essential/concurrency
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 217--218
-[]\OT1/cmr/m/n/10 N/A. (N/A). Syn-chro-niza-tion. Avail-able:
+Overfull \hbox (69.9922pt too wide) in paragraph at lines 212--214
+[]\OT1/cmr/m/n/10 N/A. (N/A). Star-va-tion and Live-lock. Avail-able: https://d
+ocs.oracle.com/javase/tutorial/essential/concurrency
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 217--218
-\OT1/cmr/m/n/10 https://docs.oracle.com/javase/tutorial/essential/concurrency/s
-ync.html.
+Overfull \hbox (42.13097pt too wide) in paragraph at lines 215--217
+[]\OT1/cmr/m/n/10 N/A. (N/A). Atomic Vari-ables. Avail-able: https://docs.oracl
+e.com/javase/tutorial/essential/concurrency
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 219--220
-[]\OT1/cmr/m/n/10 N/A. (N/A). Star-va-tion and Live-lock. Avail-able:
- []
-
-
-Overfull \hbox (18.80634pt too wide) in paragraph at lines 219--220
-\OT1/cmr/m/n/10 https://docs.oracle.com/javase/tutorial/essential/concurrency/s
-tarvelive.html.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 221--222
-[]\OT1/cmr/m/n/10 N/A. (N/A). Atomic Vari-ables. Avail-able:
- []
-
-
-Overfull \hbox (24.63971pt too wide) in paragraph at lines 221--222
-\OT1/cmr/m/n/10 https://docs.oracle.com/javase/tutorial/essential/concurrency/a
-tomicvars.html.
- []
-
-
-Underfull \hbox (badness 1694) in paragraph at lines 223--224
-\OT1/cmr/m/n/10 able: https://dzone.com/articles/how-cas-compare-and-swap-java.
- Last
+Underfull \hbox (badness 2772) in paragraph at lines 218--219
+[]\OT1/cmr/m/n/10 Akhil Mit-tal . (2015). How CAS (Com-pare And Swap) in Java w
+orks. Avail-able:
  []
 
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no “ in font cmr10!
-[11
+
+Underfull \hbox (badness 5985) in paragraph at lines 220--221
+[]\OT1/cmr/m/n/10 Angelika Langer. (2015). Java per-for-mance tu-to-rial  How f
+ast are the Java 8
+ []
+
+
+Underfull \hbox (badness 1221) in paragraph at lines 222--223
+[]\OT1/cmr/m/n/10 Lukas Kre-can. (2014). Think Twice Be-fore Us-ing Java 8 Par-
+al-lel Streams. Avail-able:
+ []
+
+[10
 
 ] (./An Investigation Into Implicit and Explicit Concurrency.aux)
 
@@ -247,13 +300,13 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 1995 strings out of 493054
- 29187 string characters out of 6138326
- 120082 words of memory out of 5000000
- 5557 multiletter control sequences out of 15000+600000
+ 2489 strings out of 493054
+ 36480 string characters out of 6138326
+ 128709 words of memory out of 5000000
+ 6036 multiletter control sequences out of 15000+600000
  8848 words of font info for 31 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 27i,6n,42p,1266b,1325s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 27i,6n,42p,1258b,1325s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/tex
 live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2015
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2015/texmf-di
@@ -263,10 +316,10 @@ c/amsfonts/cm/cmr17.pfb><c:/texlive/2015/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmsy10.pfb><c:/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti1
 0.pfb>
 Output written on "An Investigation Into Implicit and Explicit Concurrency.pdf"
- (12 pages, 119433 bytes).
+ (11 pages, 119189 bytes).
 PDF statistics:
- 75 PDF objects out of 1000 (max. 8388607)
- 52 compressed objects within 1 object stream
+ 72 PDF objects out of 1000 (max. 8388607)
+ 50 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

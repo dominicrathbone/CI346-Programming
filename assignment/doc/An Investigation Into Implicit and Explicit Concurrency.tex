@@ -1,11 +1,12 @@
 \documentclass[]{report}
 \usepackage{listings}
+\usepackage[margin=1.25in]{geometry}
 \usepackage{booktabs}
 \usepackage{enumitem}
 
 
 % Title Page
-\title{An investigation into implicit and explicit concurrency in Java.}
+\title{PART A \\ PART 1 \\ An investigation into implicit and explicit concurrency in Java.}
 	
 \author{Dominic Rathbone}
 
@@ -14,22 +15,21 @@
 \maketitle
 
 \subsection{Introduction}
-Explicit concurrency (or explicit parallelism) is a property of programming languages that give the programmer the ability to control the concurrency of a program by indicating which parts of it should be treated as such. In contrast, implicit concurrency is the inherent property of a programming language that allows it to handle code execution concurrently without the need of a programmer to specify how.
+Explicit concurrency (or explicit parallelism) is a property of programming languages that give the programmer the ability to control the concurrency of their code by indicating which parts of it should be treated as such. In contrast, implicit concurrency is the property that allows it to handle code execution concurrently without the need of a programmer to specify how.
 
 \subsection{Explicit Concurrency}
-An example of explicit concurrency is the concept of Threads in Java. Threads are concurrently executing processes within an application, sharing the same state and memory space. By default, all applications written in Java will have one main thread handling code execution. To make a program execute code concurrently, the programmer must instantiate a new instance of the Thread class which will then run the code asynchronously \cite{Threading}. (see Appendix A). Another way of running code concurrently is by making a class implement the "Runnable" interface.\cite{Threading} This can be considered a more accurate way of representing concurrent programming in Java because all it does is specify the task that should be run by a Thread. In contrast, extending the "Thread" object is less accurate as the extension of the class implies it's behaviour is being overwritten or added upon which is not the case when you are just giving the thread a task to run. (see Appendix B).
+An example of explicit concurrency is the concept of Threads in Java. Threads are concurrently executing processes within an application, sharing the same state and memory space. By default, all applications written in Java will have one main thread handling code execution. To make a program execute code concurrently, the programmer must instantiate a new instance of the Thread class which will then run the code asynchronously, away from the thread it is spawned in (see Appendix A)  \cite{Threading}. Another way of running code concurrently is by making a class implement the "Runnable" interface \cite{Threading}. This can be considered a more accurate way of representing concurrent programming in Java because all it does is specify the task that should be run by a Thread. In contrast, extending the "Thread" object is less accurate as the extension of the class implies it's behaviour is being overwritten or added upon which is not the case when you are just giving the thread a task to run. (see Appendix B).
 
 \subsubsection{Thread Pooling \& Executors}
-As you can imagine, organising threads can become quite complicated as an application scales. To manage the creation, maintenance and destruction of threads, thread-pooling can be used. This is a design pattern where a finite group of threads is created, normally in the form of a queue. These threads sit idle until they are pulled from the queue to complete a task. Once this is done, they are pushed back into the queue. This has the benefit of avoiding having a thread for each task in an application which can severely hinder performance if they aren't managed correctly. The number of threads in this pool normally varies from application to application due to the fact it could cause bottlenecking if it is too high or low. In Java, thread pools can be implemented by using Executors, more specifically via an interface called "ExecutorService". This is implemented by several concrete classes representing several types of thread pools. The simplest of these implementations is "FixedThreadPool". Once this has been instantiated, "Runnable" objects can be submitted to it as a task to be ran by one of the threads in the pool.\cite{Thread Pools}. (see Appendix C).
+Organising threads can become quite complicated as an application scales. To manage the creation, maintenance and destruction of threads, thread-pooling can be used. This is a design pattern where a finite group of threads is created, normally in the form of a queue. These threads sit idle until they are pulled from the queue to complete a task. Once this is done, they are pushed back into the queue. This has the benefit of avoiding having a thread for each task in an application which can severely hinder performance if they aren't managed correctly. The number of threads in this pool is decided by the developer and varies from application to application due to the fact it could cause bottlenecking if it is too high or low. In Java, thread pools can be implemented by using Executors, more specifically via an interface called "ExecutorService". This is implemented by several concrete classes representing several types of thread pools. The simplest of these implementations is a "FixedThreadPool". Once this has been instantiated, "Runnable" objects can be submitted to it as a task to be ran by one of the threads in the pool.\cite{Thread Pools}. (see Appendix C).
 
 \subsection{Implicit Concurrency}
-
-In Java 8, the concept of implicit concurrency was introduced through the Stream API. This allows developers to work on data in parallel by converting data structures specified in the Java Collections library to "Streams". A stream is a sequence of data that operations can be applied to as it travels through. As the streaming data is inputted into each intermediary operation, this then outputs the data into another stream which is piped into the next and so forth until it hits the last operation which terminates, forming a pipeline. \cite{Stream API}. (See Appendix D). These intermediary operations can be executed concurrently by using a parallel stream or by calling the "parallel()" intermediary operation on a default stream. This works by forking the stream into sub-streams on which each operation is applied in parallel, these sub-streams are then joined together at the terminating operation. The order that the intermediary operations are applied to each element is organised by the Java runtime.\cite{Stream API}. (see Appendix E).
+In Java 8, the concept of implicit concurrency was introduced through the Stream API. This allows developers to work on data in parallel by converting data structures specified in the Java Collections library to "Streams". A stream is a sequence of data that operations can be applied to as it travels through. As the streaming data is inputted into each intermediary operation, this then outputs the data into another stream which is piped into the next and so forth until it hits the last operation which terminates, forming a pipeline. \cite{Stream API}. (See Appendix D). These intermediary operations can be executed concurrently by using a parallel stream or by calling the "parallel()" intermediary operation on a serial stream. This works by forking the stream into sub-streams on which each operation is applied in parallel, these sub-streams are then joined together at the terminal operation. The order that the intermediary operations are applied to each element is organised automatically by the Java runtime.\cite{Stream API}. (see Appendix E).
 
 \subsection{Issues In Concurrency}
 
 \subsubsection{Thread interference}
-This is when a resource's value become non-deterministic due to multiple threads performing operations on it at the same time\cite{Thread Interference}. An example of this is:
+Thread interference is when a resource's value become non-deterministic due to multiple threads performing operations on it at the same time\cite{Thread Interference}. An example of this is:
 
 \begin{enumerate}[topsep=0pt,itemsep=-1ex,partopsep=1ex,parsep=1ex]
 	\item Counter is initialized at a value of 5.
@@ -41,22 +41,21 @@ This is when a resource's value become non-deterministic due to multiple threads
 	\item Thread B reads Counter expecting it to be 4.	
 \end{enumerate}
 
-Java multi-threading solves this issue with Synchronization. This is where multiple threads working on an individual resource are organized so that only one of them has access to it at a given point in time. This is handled by "monitors", each Java object has a monitor associated with it that can be locked or unlocked. When a thread wants to access this object, it does so by locking it with this monitor, stopping any other threads from accessing it. To implement this, synchronized methods and blocks are used. The former is used to apply synchronization to the whole scope of a method whereas the latter only applies the synchronization to the block of code within it. \cite{Synchronization}. (See Appendix F).
+Java multi-threading solves this issue with Synchronization. This is where multiple threads working on an individual resource are organized so that only one of them has access to it at a given point in time. This is handled with the notion of "monitors", each Java object has a monitor associated with it that can be locked or unlocked. When a thread wants to access this object, it does so by locking it with this monitor, stopping any other threads from accessing it. To implement this, synchronized methods and blocks are used. The former is used to apply synchronization to the whole scope of a method whereas the latter only applies the synchronization to the block of code within it. \cite{Synchronization}. (See Appendix F).
 
-With parallel streaming in Java, the library controls and optimises how the stream is broken down into sub-streams and processed, meaning thread interference does not occur unless an operation is applied to the source collection as the pipe line is being applied to the stream, in which case a "ConcurrentModificationException" is thrown.\cite{Streaming Fork Join}
+With parallel streaming in Java, the library controls and optimises how the stream is broken down into sub-streams and processed, meaning thread interference does not occur unless an operation is applied externally to the source collection as the pipe line is being applied to the stream, in which case a "ConcurrentModificationException" is thrown.\cite{Streaming Fork Join}
 
 \subsubsection{Thread Contention} 
-This occurs due to the fact that resources are shared between threads and more than one  being executed in parallel may try to access these resources simultaneously. Resource starvation is one of these issues in which a thread is “starved” of a resource, constantly waiting for it to become available\cite{Starvation}. Another common contention is deadlock, where two threads are waiting on each other to complete an action. In Java, these both can be caused by the introduction of Synchronization as it locks resources so only one thread can access it at a time.\cite{Synchronization}
+This occurs due to the fact that resources are shared between threads and more than one being executed in parallel may try to access these resources simultaneously. Resource starvation is one of these issues in which a thread is “starved” of a resource, constantly waiting for it to become available\cite{Starvation}. Another common contention is deadlock, where two threads are waiting on each other to complete an action on resource the opposite thread holds. In Java, these both can be caused by the introduction of Synchronization as it locks resources so only one thread can access it at a time.\cite{Synchronization}
 
 There are several ways of avoiding thread contention with explicit concurrency in Java. One of these is to use a non-lock, non-wait solution such as atomic variables. These are wrappers for primitives that implement atomic operations. These are a series of operations that are considered instantaneous by everything outside their own scope and are "all-or-nothing" in the sense that they either completely succeed or completely fail.\cite{Atomic Variables} In order to avoid thread interference without synchronization, these operations implement a technique called "compare and swap" or CAS, where the memory location of the variable being changed is checked before the computation has occurred and after it has occurred. if these two values differ, it implies it has been changed by another operation and so the memory location is not updated with the new value from the computation and has to goes through the process again.\cite{Compare Swap}
 
 Again, due to the nature of implicit parallelism, particularly with streams in Java 8, Thread Contention is not an issue as we are leaving the Java Runtime and the Streams API to deal with the organisation of multi-core processing.
 
 \subsubsection{Conclusion}
-Although the benefits of implicit parallelism over explicit in Java do seem to be numerous, it does have its limitations. In fact, some benchmarks have shown it to be slower than non-parallel approaches if used wrongly.\cite{Stream API} Another problem is that all parallel streams use the same thread pool for forking and joining\cite{Common Thread Pool}. This means that one parallel stream could block every other one from running by submitting an expensive operation to the pool even if they are not running on the same resource. Another problem with implicit parallelism is the human aspect in that it allows developers to avoid learning how parallel processing in Java actually works by obfuscating it away and leaving the runtime and API to deal with it. This could mean that it is more likely for developers to use it inappropriately. It also means that if they did need to control the way a program needed to handle parallelism, it would be harder to do so. 
+Although the benefits of implicit parallelism over explicit in Java do seem to be numerous, it does have its limitations. In fact, benchmarks have shown it to be slower than non-parallel approaches if used wrongly and due to it's inherent unpredictability, this is very easy to do.\cite{Stream API} Another problem is that all parallel streams use the same thread pool for forking and joining\cite{Common Thread Pool}. This means that one parallel stream could block every other one from running by submitting an expensive operation to the pool even if they are not running on the same resource. Another problem with implicit parallelism is the human aspect in that it allows developers to avoid learning how parallel processing in Java actually works by obfuscating it away and leaving the runtime and API to deal with it resulting in developers becoming more likely to use it inappropriately. It also means that if they did need to control the way a program needed to handle parallelism, it would be harder to do so. 
 
-In contrast, whilst explicit parallelism in Java has a bigger learning curve and can be inefficient if improperly utilised, it offers more freedom to experienced developers for optimisation. On top of this, it is possible to avoid the issues of synchronization by using alternative methods to control concurrent code such as a locking framework and atomic variables.
-
+In contrast, whilst explicit parallelism in Java has a bigger learning curve and can be inefficient if improperly utilised, it offers more freedom to experienced developers for optimisation, especially in cases where certain tasks perform better with certain concurrency strategies. On top of this, it is possible to avoid the issues of synchronization by using alternative methods to control concurrent code such as a locking framework and atomic variables.
 
 \appendix
 
@@ -197,19 +196,24 @@ public class SynchronizedStudent {
 
 \begin{thebibliography}{20}
 	\bibitem{Threading}
-	N/A. (N/A). Threading. Available: https://docs.oracle.com/javase/tutorial/essential/concurrency/runthread.html. Last accessed 14/01/2016.
+	N/A. (N/A). Threading. Available: https://docs.oracle.com/javase/tutorial/essential/concurrency
+	/runthread.html. Last accessed 14/01/2016.
 	\bibitem{Thread Pools}
 	N/A. (N/A). Thread Pools. Available: https://docs.oracle.com/javase/tutorial/essential/concurrency/pools.html. Last accessed 14/01/2016.
 	\bibitem{Stream API}
 	Madhusudhan Konda. (2015). Java 8 streams API and parallelism. Available: http://radar.oreilly.com/2015/02/java-8-streams-api-and-parallelism.html. Last accessed 14/01/2016.
 	\bibitem{Thread Interference}
-	N/A. (N/A). Thread Interference. Available: https://docs.oracle.com/javase/tutorial/essential/concurrency/interfere.html. Last accessed 14/01/2016.
+	N/A. (N/A). Thread Interference. Available: https://docs.oracle.com/javase/tutorial/essential/concurrency
+	/interfere.html. Last accessed 14/01/2016.
 	\bibitem{Synchronization}
-	N/A. (N/A). Synchronization. Available: https://docs.oracle.com/javase/tutorial/essential/concurrency/sync.html. Last accessed 14/01/2016.
+	N/A. (N/A). Synchronization. Available: https://docs.oracle.com/javase/tutorial/essential/concurrency
+	/sync.html. Last accessed 14/01/2016.
 	\bibitem{Starvation}
-	N/A. (N/A). Starvation and Livelock. Available: https://docs.oracle.com/javase/tutorial/essential/concurrency/starvelive.html. Last accessed 14/01/2016.
+	N/A. (N/A). Starvation and Livelock. Available: https://docs.oracle.com/javase/tutorial/essential/concurrency
+	/starvelive.html. Last accessed 14/01/2016.
 	\bibitem{Atomic Variables}
-	N/A. (N/A). Atomic Variables. Available: https://docs.oracle.com/javase/tutorial/essential/concurrency/atomicvars.html. Last accessed 14/01/2016.
+	N/A. (N/A). Atomic Variables. Available: https://docs.oracle.com/javase/tutorial/essential/concurrency
+	/atomicvars.html. Last accessed 14/01/2016.
 	\bibitem{Compare Swap}
 	Akhil Mittal . (2015). How CAS (Compare And Swap) in Java works. Available: https://dzone.com/articles/how-cas-compare-and-swap-java. Last accessed 14/01/2016.
 	\bibitem{Streaming Benchmark}

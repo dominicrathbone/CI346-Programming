@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.10.27)  18 MAR 2016 19:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.10.27)  19 MAR 2016 20:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -103,18 +103,18 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 (./A comparison of C++ and Java.aux)
 \openout1 = `"A comparison of C++ and Java.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
 \c@lstlisting=\count103
 
 *geometry* driver: auto-detecting
@@ -152,36 +152,19 @@ LaTeX Font Info:    ... okay on input line 12.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 13.
+(Font)              <12> on input line 14.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 13.
+(Font)              <8> on input line 14.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 13.
+(Font)              <6> on input line 14.
 [1
 
-{c:/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [1]
-
-LaTeX Warning: Citation `Smart Pointers' on page 2 undefined on input line 43.
-
-[2] [3] [4]
-Underfull \hbox (badness 10000) in paragraph at lines 78--79
-[]\OT1/cmr/m/n/10 https://www.santarosa.edu/~dpearson/mirrored[]pages/java.sun.
-com/Java[]Technology[]-
- []
-
-
-Overfull \hbox (9.29776pt too wide) in paragraph at lines 92--93
-[]\OT1/cmr/m/n/10 http://althing.cs.dartmouth.edu/local/www.acm.uiuc.edu/sigmil
-/RevEng/ch02.html#id2558687 
- []
-
-[5
-
-]
+{c:/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [1] [2]
+[3] [4]
 Appendix A.
 (c:/texlive/2015/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
-) [6
+) [5
 
 ]
 Appendix B.
@@ -195,75 +178,153 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
 )
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 131.
+(Font)              <7> on input line 105.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 131.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 132.
+(Font)              <5> on input line 105.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 106.
 
 
 (c:/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 132.
- [7
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 106.
+ [6
 
 ]
 Appendix C.
-[8
+[7
 
 ]
 Appendix D.
-[9
+[8
 
 ]
 Appendix E.
-[10
+[9
 
 ]
 Appendix F.
-[11
+[10
 
 ]
 Appendix G.
-[12
+[11
 
 ]
 Appendix H.
-[13
+[12
 
 ]
 Appendix I.
-[14
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 241.
+
+(c:/texlive/2015/texmf-dist/tex/latex/base/omlcmr.fd
+File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 241.
+ [13
 
 ]
 Appendix J.
+[14
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 271--272
+[]\OT1/cmr/m/n/10 Jon By-ous. (2003). JAVA TECH-NOL-OGY: AN EARLY HIS-TOY. Avai
+l-able:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 271--272
+\OT1/cmr/m/n/10 https://www.santarosa.edu/~dpearson/mirrored[]pages/java.sun.co
+m/Java[]Technology[]-
+ []
+
+
+Underfull \hbox (badness 6220) in paragraph at lines 275--276
+[]\OT1/cmr/m/n/10 Premshree Pil-lai. (2004). In-tro-duc-tion to Static and Dy-n
+amic Typ-ing. Avail-able:
+ []
+
+
+Underfull \hbox (badness 4132) in paragraph at lines 277--278
+[]\OT1/cmr/m/n/10 N/A. (N/A). Pa-ram-e-ter pass-ing in Java - by ref-er-ence or
+ by value?. Avail-able:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 281--282
+[]\OT1/cmr/m/n/10 N/A. (N/A). How Garbage Col-lec-tion Re-ally Works. Avail-abl
+e:
+ []
+
+
+Underfull \hbox (badness 7851) in paragraph at lines 281--282
+\OT1/cmr/m/n/10 http://www.dynatrace.com/en/javabook/how-garbage-collection-wor
+ks.html. Last ac-cessed
+ []
+
+
+Underfull \hbox (badness 7522) in paragraph at lines 283--284
+[]\OT1/cmr/m/n/10 Andrei Milea. (N/A). Com-mon Mem-ory Man-age-ment Prob-lems i
+n C++. Avail-
+ []
+
+
+Underfull \hbox (badness 1430) in paragraph at lines 283--284
+\OT1/cmr/m/n/10 able: http://www.cprogramming.com/tutorial/c++[]memory[]problem
+s.html. Last ac-cessed
+ []
+
+
+Overfull \hbox (88.74228pt too wide) in paragraph at lines 287--289
+[]\OT1/cmr/m/n/10 N/A. (2004). The Com-pi-la-tion Pro-cess. Avail-able: http://
+althing.cs.dartmouth.edu/local/www.acm.uiuc.edu/sigmil
+ []
+
+
+Overfull \hbox (63.46432pt too wide) in paragraph at lines 290--291
+[]\OT1/cmr/m/n/10 N/A. (N/A). Les-son: Con-cur-rency. Avail-able: https://docs.
+oracle.com/javase/tutorial/essential/concurrency/
+ []
+
+
+Overfull \hbox (81.82547pt too wide) in paragraph at lines 292--293
+[]\OT1/cmr/m/n/10 N/A. (N/A). Con-cur-rency in C++11. Avail-able: https://www.c
+lasses.cs.uchicago.edu/archive/2013/spring/12300-
+ []
+
+
+Overfull \hbox (52.21434pt too wide) in paragraph at lines 294--295
+[]\OT1/cmr/m/n/10 N/A. (N/A). Les-son: Ex-cep-tions. Avail-able: https://docs.o
+racle.com/javase/tutorial/essential/exceptions/.
+ []
+
 [15
 
-] (./A comparison of C++ and Java.aux)
-
-LaTeX Warning: There were undefined references.
-
- ) 
+] (./A comparison of C++ and Java.aux) ) 
 Here is how much of TeX's memory you used:
- 2341 strings out of 493054
- 33198 string characters out of 6138326
- 127437 words of memory out of 5000000
- 5889 multiletter control sequences out of 15000+600000
+ 2388 strings out of 493054
+ 33731 string characters out of 6138326
+ 127391 words of memory out of 5000000
+ 5933 multiletter control sequences out of 15000+600000
  9146 words of font info for 32 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 34i,6n,60p,1194b,1274s stack positions out of 5000i,500n,10000p,200000b,80000s
-<c:/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/tex
-live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2015
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2015/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2015/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2015/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmsy10.pfb><c:/texlive/2015/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmti10.pfb>
-Output written on "A comparison of C++ and Java.pdf" (16 pages, 120404 bytes).
+ 34i,6n,60p,1241b,1274s stack positions out of 5000i,500n,10000p,200000b,80000s
+<c:/texlive/2015/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2015/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmbx12.pfb><c:/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmmi10.pfb><c:/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.p
+fb><c:/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/tex
+live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2015/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2015/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on "A comparison of C++ and Java.pdf" (16 pages, 131259 bytes).
 PDF statistics:
- 84 PDF objects out of 1000 (max. 8388607)
- 58 compressed objects within 1 object stream
+ 88 PDF objects out of 1000 (max. 8388607)
+ 61 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
